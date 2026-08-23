@@ -8,7 +8,14 @@ network hop unless you want one.
 
 ## Status
 
-Early. Nothing here is usable yet.
+Early, but the ground floor works:
+
+- In-memory vector store
+- Append-only write-ahead log with replay
+- Survives being killed mid-write — torn records are dropped, everything
+  before them replays clean
+
+No index yet, so search is nonexistent. That's next.
 
 ## Building
 
