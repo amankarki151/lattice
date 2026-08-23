@@ -1,0 +1,23 @@
+# build output
+build/
+*.o
+*.a
+*.so
+*.dylib
+
+# editor / OS
+.vscode/settings.json
+.vscode/ipch/
+.DS_Store
+
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# secrets
+.env
+
+# test scratch files
+*.wal
