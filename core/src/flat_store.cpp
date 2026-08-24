@@ -22,4 +22,13 @@ void FlatStore::clear() {
     items_.clear();
 }
 
+std::vector<Vector> FlatStore::snapshot() const {
+    std::vector<Vector> out;
+    out.reserve(items_.size());
+    for (const auto& [id, v] : items_) {
+        out.push_back(v);
+    }
+    return out;
+}
+
 }  // namespace lattice

@@ -8,14 +8,16 @@ network hop unless you want one.
 
 ## Status
 
-Early, but the ground floor works:
+The storage layer works end to end:
 
-- In-memory vector store
 - Append-only write-ahead log with replay
+- Memory-mapped segment files for settled data
+- Recovery on open: load the segment, replay the WAL on top
+- Checkpointing folds the WAL into a new segment via atomic rename
 - Survives being killed mid-write — torn records are dropped, everything
-  before them replays clean
+  before them comes back clean
 
-No index yet, so search is nonexistent. That's next.
+Still no index, so there's nothing to search yet. Brute-force search is next.
 
 ## Building
 

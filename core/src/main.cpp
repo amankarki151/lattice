@@ -1,57 +1,51 @@
 #include <iostream>
 #include <string>
 
-#include "lattice/segment.hpp"
-#include "lattice/vector.hpp"
+#include "lattice/database.hpp"
 
 namespace {
 
-const std::string kSegPath = "/tmp/lattice_test.seg";
+const std::string kDir = "/tmp/lattice_db";
 
-std::vector<lattice::Vector> make_vectors(int count) {
-    std::vector<lattice::Vector> items;
-    items.reserve(count);
-    for (int i = 1; i <= count; ++i) {
-        lattice::Vector v;
-        v.id = static_cast<uint64_t>(i);
-        v.data = {static_cast<float>(i),
-                  static_cast<float>(i) * 2.0f,
-                  static_cast<float>(i) * 3.0f,
-                  static_cast<float>(i) * 4.0f};
-        items.push_back(std::move(v));
-    }
-    return items;
+lattice::Vector make_vector(uint64_t id) {
+    lattice::Vector v;
+    v.id = id;
+    v.data = {static_cast<float>(id),
+              static_cast<float>(id) * 2.0f,
+              static_cast<float>(id) * 3.0f,
+              static_cast<float>(id) * 4.0f};
+    return v;
 }
 
-void write_segment(int count) {
-    auto items = make_vectors(count);
-    lattice::SegmentWriter::write(kSegPath, items);
-    std::cout << "wrote segment with " << count << " records\n";
+void cmd_insert(uint64_t from, uint64_t to) {
+    lattice::Database db(kDir);
+    for (uint64_t i = from; i <= to; ++i) {
+        db.insert(make_vector(i));
+        if (i % 1000 == 0) {
+            std::cout << "inserted up to " << i << "\n";
+        }
+    }
+    std::cout << "done. store size " << db.size() << "\n";
 }
 
-void read_segment() {
-    lattice::SegmentReader reader(kSegPath);
-    if (!reader.ok()) {
-        std::cout << "no readable segment at " << kSegPath << "\n";
-        return;
-    }
+void cmd_checkpoint() {
+    lattice::Database db(kDir);
+    db.checkpoint();
+}
 
-    std::cout << "header says " << reader.count() << " records\n";
+void cmd_open() {
+    lattice::Database db(kDir);
+    std::cout << "opened, size " << db.size() << "\n";
 
-    auto items = reader.read_all();
-    std::cout << "actually read " << items.size() << "\n";
-
-    if (!items.empty()) {
-        const auto& first = items.front();
-        std::cout << "id " << first.id << " -> [";
-        for (size_t i = 0; i < first.data.size(); ++i) {
-            std::cout << first.data[i];
-            if (i + 1 < first.data.size()) std::cout << ", ";
+    auto first = db.get(1);
+    std::cout << "id 1 present? " << (first ? "yes" : "no") << "\n";
+    if (first) {
+        std::cout << "id 1 -> [";
+        for (size_t i = 0; i < first->data.size(); ++i) {
+            std::cout << first->data[i];
+            if (i + 1 < first->data.size()) std::cout << ", ";
         }
         std::cout << "]\n";
-
-        const auto& last = items.back();
-        std::cout << "last id " << last.id << "\n";
     }
 }
 
@@ -59,17 +53,25 @@ void read_segment() {
 
 int main(int argc, char** argv) {
     if (argc < 2) {
-        std::cout << "usage: scratch segwrite <count> | scratch segread\n";
+        std::cout << "usage:\n"
+                  << "  scratch insert <from> <to>\n"
+                  << "  scratch checkpoint\n"
+                  << "  scratch open\n";
         return 1;
     }
 
     const std::string cmd = argv[1];
 
-    if (cmd == "segwrite") {
-        const int count = (argc >= 3) ? std::stoi(argv[2]) : 100;
-        write_segment(count);
-    } else if (cmd == "segread") {
-        read_segment();
+    if (cmd == "insert") {
+        if (argc < 4) {
+            std::cout << "insert needs <from> <to>\n";
+            return 1;
+        }
+        cmd_insert(std::stoull(argv[2]), std::stoull(argv[3]));
+    } else if (cmd == "checkpoint") {
+        cmd_checkpoint();
+    } else if (cmd == "open") {
+        cmd_open();
     } else {
         std::cout << "unknown command: " << cmd << "\n";
         return 1;

@@ -4,6 +4,7 @@
 #include <cstdint>
 #include <optional>
 #include <unordered_map>
+#include <vector>
 
 #include "lattice/vector.hpp"
 
@@ -18,6 +19,10 @@ public:
     std::optional<Vector> get(uint64_t id) const;
     size_t size() const;
     void clear();
+
+    // Everything currently held, as a flat list. Order isn't meaningful —
+    // it's whatever the hash map iterates in.
+    std::vector<Vector> snapshot() const;
 
 private:
     std::unordered_map<uint64_t, Vector> items_;
