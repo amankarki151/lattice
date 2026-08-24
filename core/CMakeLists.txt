@@ -3,6 +3,8 @@ add_library(lattice_core
     src/wal.cpp
     src/segment.cpp
     src/database.cpp
+    src/distance.cpp
+    src/search.cpp
 )
 
 target_include_directories(lattice_core PUBLIC include)

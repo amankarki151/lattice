@@ -4,8 +4,10 @@
 #include <memory>
 #include <optional>
 #include <string>
+#include <vector>
 
 #include "lattice/flat_store.hpp"
+#include "lattice/search.hpp"
 #include "lattice/vector.hpp"
 #include "lattice/wal.hpp"
 
@@ -32,6 +34,10 @@ public:
     void insert(const Vector& v);
     std::optional<Vector> get(uint64_t id) const;
     size_t size() const;
+
+    // Nearest neighbours to query, closest first.
+    std::vector<SearchResult> search(const std::vector<float>& query,
+                                     size_t k) const;
 
     void checkpoint();
 

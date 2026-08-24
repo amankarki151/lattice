@@ -6,6 +6,7 @@
 #include <iostream>
 
 #include "lattice/segment.hpp"
+#include "lattice/search.hpp"
 
 namespace lattice {
 
@@ -73,6 +74,14 @@ std::optional<Vector> Database::get(uint64_t id) const {
 
 size_t Database::size() const {
     return store_.size();
+}
+
+std::vector<SearchResult> Database::search(const std::vector<float>& query,
+                                           size_t k) const {
+    // Copies every vector out of the store to scan them, which is wasteful
+    // and gets fixed once there's a real index. Today it just needs to be
+    // correct, since this is the thing HNSW gets checked against.
+    return brute_force_search(store_.snapshot(), query, k);
 }
 
 void Database::checkpoint() {
