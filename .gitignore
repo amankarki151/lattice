@@ -21,3 +21,5 @@ venv/
 
 # test scratch files
 *.wal
+
+notes.md

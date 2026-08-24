@@ -1,6 +1,7 @@
 add_library(lattice_core
     src/flat_store.cpp
     src/wal.cpp
+    src/segment.cpp
 )
 
 target_include_directories(lattice_core PUBLIC include)

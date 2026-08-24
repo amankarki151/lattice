@@ -1,15 +1,16 @@
 #include <iostream>
 #include <string>
 
-#include "lattice/flat_store.hpp"
-#include "lattice/wal.hpp"
+#include "lattice/segment.hpp"
+#include "lattice/vector.hpp"
 
 namespace {
 
-const std::string kWalPath = "/tmp/lattice_test.wal";
+const std::string kSegPath = "/tmp/lattice_test.seg";
 
-void write_records(int count) {
-    lattice::Wal wal(kWalPath);
+std::vector<lattice::Vector> make_vectors(int count) {
+    std::vector<lattice::Vector> items;
+    items.reserve(count);
     for (int i = 1; i <= count; ++i) {
         lattice::Vector v;
         v.id = static_cast<uint64_t>(i);
@@ -17,34 +18,40 @@ void write_records(int count) {
                   static_cast<float>(i) * 2.0f,
                   static_cast<float>(i) * 3.0f,
                   static_cast<float>(i) * 4.0f};
-        wal.append(v);
-
-        if (i % 1000 == 0) {
-            std::cout << "wrote " << i << "\n";
-        }
+        items.push_back(std::move(v));
     }
-    std::cout << "done writing " << count << "\n";
+    return items;
 }
 
-void replay_into_store() {
-    auto records = lattice::Wal::replay(kWalPath);
+void write_segment(int count) {
+    auto items = make_vectors(count);
+    lattice::SegmentWriter::write(kSegPath, items);
+    std::cout << "wrote segment with " << count << " records\n";
+}
 
-    lattice::FlatStore store;
-    for (const auto& v : records) {
-        store.insert(v);
+void read_segment() {
+    lattice::SegmentReader reader(kSegPath);
+    if (!reader.ok()) {
+        std::cout << "no readable segment at " << kSegPath << "\n";
+        return;
     }
 
-    std::cout << "replayed " << records.size() << " records, store has "
-              << store.size() << "\n";
+    std::cout << "header says " << reader.count() << " records\n";
 
-    auto first = store.get(1);
-    if (first) {
-        std::cout << "id 1 -> [";
-        for (size_t i = 0; i < first->data.size(); ++i) {
-            std::cout << first->data[i];
-            if (i + 1 < first->data.size()) std::cout << ", ";
+    auto items = reader.read_all();
+    std::cout << "actually read " << items.size() << "\n";
+
+    if (!items.empty()) {
+        const auto& first = items.front();
+        std::cout << "id " << first.id << " -> [";
+        for (size_t i = 0; i < first.data.size(); ++i) {
+            std::cout << first.data[i];
+            if (i + 1 < first.data.size()) std::cout << ", ";
         }
         std::cout << "]\n";
+
+        const auto& last = items.back();
+        std::cout << "last id " << last.id << "\n";
     }
 }
 
@@ -52,17 +59,17 @@ void replay_into_store() {
 
 int main(int argc, char** argv) {
     if (argc < 2) {
-        std::cout << "usage: scratch write <count> | scratch replay\n";
+        std::cout << "usage: scratch segwrite <count> | scratch segread\n";
         return 1;
     }
 
     const std::string cmd = argv[1];
 
-    if (cmd == "write") {
+    if (cmd == "segwrite") {
         const int count = (argc >= 3) ? std::stoi(argv[2]) : 100;
-        write_records(count);
-    } else if (cmd == "replay") {
-        replay_into_store();
+        write_segment(count);
+    } else if (cmd == "segread") {
+        read_segment();
     } else {
         std::cout << "unknown command: " << cmd << "\n";
         return 1;
