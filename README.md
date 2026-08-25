@@ -8,19 +8,20 @@ network hop unless you want one.
 
 ## Status
 
-Storage and exact search work:
+## Status
+
+Storage and exact search work, and the HNSW index builds:
 
 - Append-only write-ahead log with replay
 - Memory-mapped segment files for settled data
 - Recovery on open: load the segment, replay the WAL on top
 - Checkpointing folds the WAL into a new segment via atomic rename
 - Brute-force k-nearest-neighbour search over squared L2 distance
+- HNSW graph construction with layered insertion and neighbour pruning
 - A CLI for inserting, fetching, querying, and checkpointing
 
-Search is O(n) per query right now. The HNSW index is next, and this
-brute-force path stays around permanently as the thing it gets checked
-against.
-
+The index builds but doesn't answer queries yet - search over the graph
+is next, along with correctness testing against the brute-force path.
 ## Usage
 
 ```bash
