@@ -10,3 +10,4 @@ if(NOT CMAKE_BUILD_TYPE)
 endif()
 
 add_subdirectory(core)
+add_subdirectory(cli)

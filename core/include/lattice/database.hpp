@@ -10,6 +10,7 @@
 #include "lattice/search.hpp"
 #include "lattice/vector.hpp"
 #include "lattice/wal.hpp"
+#include "lattice/planner.hpp"
 
 namespace lattice {
 
@@ -53,6 +54,8 @@ private:
 
     FlatStore store_;
     std::unique_ptr<Wal> wal_;
+    QueryPlanner planner_;
+    bool index_available_ = false;  // flips to true when HNSW lands
 };
 
 }  // namespace lattice
