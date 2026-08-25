@@ -5,6 +5,7 @@ add_library(lattice_core
     src/database.cpp
     src/distance.cpp
     src/search.cpp
+    src/hnsw.cpp
 )
 
 target_include_directories(lattice_core PUBLIC include)
