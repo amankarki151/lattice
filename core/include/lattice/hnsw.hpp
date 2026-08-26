@@ -35,6 +35,13 @@ public:
     explicit HnswIndex(HnswConfig config = {});
 
     void insert(const Vector& v);
+        // Nearest neighbours to query, closest first.
+    //
+    // ef controls how many candidates stay in flight during the layer-0
+    // search. Bigger ef explores more of the graph: better recall, slower
+    // query. It must be >= k, and gets bumped up to k if it isn't.
+    std::vector<SearchResult> search(const std::vector<float>& query,
+                                     size_t k, size_t ef = 50) const;
 
     size_t size() const { return nodes_.size(); }
     int max_layer() const { return max_layer_; }

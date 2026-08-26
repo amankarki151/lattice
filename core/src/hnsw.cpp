@@ -275,6 +275,41 @@ void HnswIndex::insert(const Vector& v) {
     }
 }
 
+std::vector<SearchResult> HnswIndex::search(const std::vector<float>& query,
+                                            size_t k, size_t ef) const {
+    std::vector<SearchResult> out;
+
+    if (entry_point_ < 0 || k == 0) {
+        return out;
+    }
+
+    // ef below k makes no sense - you can't return 10 results from a
+    // candidate pool of 5. Bump it rather than failing.
+    if (ef < k) {
+        ef = k;
+    }
+
+    uint64_t current = static_cast<uint64_t>(entry_point_);
+
+    // Upper layers: single greedy walk, no wide search. These layers are
+    // sparse - a handful of nodes with long-range links. Their whole job
+    // is to get close to the right region of the graph in a few hops, not
+    // to find the answer.
+    for (int L = max_layer_; L > 0; --L) {
+        current = greedy_closest(current, query, L);
+    }
+
+    // Layer 0: this is where the answer actually lives. Every vector is
+    // here, so this is the only layer where a wide search pays off.
+    auto candidates = search_layer({current}, query, ef, 0);
+
+    // search_layer already returns closest-first, so just take the top k.
+    const size_t n = std::min(k, candidates.size());
+    out.assign(candidates.begin(), candidates.begin() + n);
+
+    return out;
+}
+
 std::vector<size_t> HnswIndex::layer_counts() const {
     std::vector<size_t> counts(max_layer_ + 1, 0);
     for (const auto& [id, node] : nodes_) {
