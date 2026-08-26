@@ -8,7 +8,7 @@ network hop unless you want one.
 
 ## Status
 
-The index works and agrees with exact search:
+Storage, exact search, HNSW, and quantization all work:
 
 - Append-only write-ahead log with replay
 - Memory-mapped segment files for settled data
@@ -16,11 +16,15 @@ The index works and agrees with exact search:
 - Checkpointing folds the WAL into a new segment via atomic rename
 - Brute-force k-nearest-neighbour search over squared L2 distance
 - HNSW index: layered graph construction, neighbour pruning, and
-  coarse-to-fine search
-- Recall measured against the brute-force path at a range of ef values
-- A CLI for inserting, fetching, querying, and checkpointing
+  coarse-to-fine search, with recall measured against the exact path
+- Scalar quantization: float32 to uint8, 4x smaller, with the recall
+  and speed cost measured rather than assumed
 
-Next: quantization, to cut the memory cost per vector.
+Next: concurrency - queries running while a background thread ingests.
+
+## Writing
+
+- [Building an HNSW index from scratch](https://amankarki.hashnode.dev/building-an-hnsw-index-from-scratch)
 
 ## Usage
 
