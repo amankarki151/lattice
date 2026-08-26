@@ -8,7 +8,7 @@ network hop unless you want one.
 
 ## Status
 
-Storage, exact search, HNSW, and quantization all work:
+Storage, search, indexing, quantization, and concurrency all work:
 
 - Append-only write-ahead log with replay
 - Memory-mapped segment files for settled data
@@ -19,8 +19,11 @@ Storage, exact search, HNSW, and quantization all work:
   coarse-to-fine search, with recall measured against the exact path
 - Scalar quantization: float32 to uint8, 4x smaller, with the recall
   and speed cost measured rather than assumed
+- Concurrent query path: many readers alongside a single writer,
+  verified clean under the thread sanitizer
 
-Next: concurrency - queries running while a background thread ingests.
+Next: Python bindings and an HTTP server, then benchmarking against
+Qdrant and Chroma.
 
 ## Writing
 

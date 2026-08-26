@@ -27,3 +27,5 @@ target_link_libraries(lattice_core PUBLIC Threads::Threads)
 # Also updated the path for main.cpp
 add_executable(scratch core/src/main.cpp)
 target_link_libraries(scratch PRIVATE lattice_core)
+set_target_properties(scratch PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/core")
+

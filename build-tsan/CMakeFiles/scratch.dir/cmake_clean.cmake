@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/scratch.dir/core/src/main.cpp.o"
   "CMakeFiles/scratch.dir/core/src/main.cpp.o.d"
-  "scratch"
-  "scratch.pdb"
+  "core/scratch"
+  "core/scratch.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

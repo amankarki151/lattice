@@ -867,8 +867,13 @@ CMakeFiles/scratch.dir/core/src/main.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/student_t_distribution.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/uniform_random_bit_generator.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/weibull_distribution.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/thread \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__thread/this_thread.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__thread/thread.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/sstream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/unordered_set \
+  /Users/amankarki/Downloads/projects/lattice/core/include/lattice/concurrent_index.hpp \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/shared_mutex \
   /Users/amankarki/Downloads/projects/lattice/core/include/lattice/hnsw.hpp \
   /Users/amankarki/Downloads/projects/lattice/core/include/lattice/search.hpp \
-  /Users/amankarki/Downloads/projects/lattice/core/include/lattice/vector.hpp \
-  /Users/amankarki/Downloads/projects/lattice/core/include/lattice/quantizer.hpp
+  /Users/amankarki/Downloads/projects/lattice/core/include/lattice/vector.hpp
