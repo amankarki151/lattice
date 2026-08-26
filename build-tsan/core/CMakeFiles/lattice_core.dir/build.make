@@ -184,6 +184,20 @@ core/CMakeFiles/lattice_core.dir/src/quantizer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/lattice_core.dir/src/quantizer.cpp.s"
 	cd /Users/amankarki/Downloads/projects/lattice/build-tsan/core && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/amankarki/Downloads/projects/lattice/core/src/quantizer.cpp -o CMakeFiles/lattice_core.dir/src/quantizer.cpp.s
 
+core/CMakeFiles/lattice_core.dir/src/concurrent_index.cpp.o: core/CMakeFiles/lattice_core.dir/flags.make
+core/CMakeFiles/lattice_core.dir/src/concurrent_index.cpp.o: /Users/amankarki/Downloads/projects/lattice/core/src/concurrent_index.cpp
+core/CMakeFiles/lattice_core.dir/src/concurrent_index.cpp.o: core/CMakeFiles/lattice_core.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/amankarki/Downloads/projects/lattice/build-tsan/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object core/CMakeFiles/lattice_core.dir/src/concurrent_index.cpp.o"
+	cd /Users/amankarki/Downloads/projects/lattice/build-tsan/core && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT core/CMakeFiles/lattice_core.dir/src/concurrent_index.cpp.o -MF CMakeFiles/lattice_core.dir/src/concurrent_index.cpp.o.d -o CMakeFiles/lattice_core.dir/src/concurrent_index.cpp.o -c /Users/amankarki/Downloads/projects/lattice/core/src/concurrent_index.cpp
+
+core/CMakeFiles/lattice_core.dir/src/concurrent_index.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/lattice_core.dir/src/concurrent_index.cpp.i"
+	cd /Users/amankarki/Downloads/projects/lattice/build-tsan/core && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/amankarki/Downloads/projects/lattice/core/src/concurrent_index.cpp > CMakeFiles/lattice_core.dir/src/concurrent_index.cpp.i
+
+core/CMakeFiles/lattice_core.dir/src/concurrent_index.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/lattice_core.dir/src/concurrent_index.cpp.s"
+	cd /Users/amankarki/Downloads/projects/lattice/build-tsan/core && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/amankarki/Downloads/projects/lattice/core/src/concurrent_index.cpp -o CMakeFiles/lattice_core.dir/src/concurrent_index.cpp.s
+
 # Object files for target lattice_core
 lattice_core_OBJECTS = \
 "CMakeFiles/lattice_core.dir/src/flat_store.cpp.o" \
@@ -193,7 +207,8 @@ lattice_core_OBJECTS = \
 "CMakeFiles/lattice_core.dir/src/distance.cpp.o" \
 "CMakeFiles/lattice_core.dir/src/search.cpp.o" \
 "CMakeFiles/lattice_core.dir/src/hnsw.cpp.o" \
-"CMakeFiles/lattice_core.dir/src/quantizer.cpp.o"
+"CMakeFiles/lattice_core.dir/src/quantizer.cpp.o" \
+"CMakeFiles/lattice_core.dir/src/concurrent_index.cpp.o"
 
 # External object files for target lattice_core
 lattice_core_EXTERNAL_OBJECTS =
@@ -206,9 +221,10 @@ core/liblattice_core.a: core/CMakeFiles/lattice_core.dir/src/distance.cpp.o
 core/liblattice_core.a: core/CMakeFiles/lattice_core.dir/src/search.cpp.o
 core/liblattice_core.a: core/CMakeFiles/lattice_core.dir/src/hnsw.cpp.o
 core/liblattice_core.a: core/CMakeFiles/lattice_core.dir/src/quantizer.cpp.o
+core/liblattice_core.a: core/CMakeFiles/lattice_core.dir/src/concurrent_index.cpp.o
 core/liblattice_core.a: core/CMakeFiles/lattice_core.dir/build.make
 core/liblattice_core.a: core/CMakeFiles/lattice_core.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/amankarki/Downloads/projects/lattice/build-tsan/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX static library liblattice_core.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/amankarki/Downloads/projects/lattice/build-tsan/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX static library liblattice_core.a"
 	cd /Users/amankarki/Downloads/projects/lattice/build-tsan/core && $(CMAKE_COMMAND) -P CMakeFiles/lattice_core.dir/cmake_clean_target.cmake
 	cd /Users/amankarki/Downloads/projects/lattice/build-tsan/core && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/lattice_core.dir/link.txt --verbose=$(VERBOSE)
 

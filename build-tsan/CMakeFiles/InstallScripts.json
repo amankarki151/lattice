@@ -1,7 +1,9 @@
 {
 	"InstallScripts" : 
 	[
-		"/Users/amankarki/Downloads/projects/lattice/build-tsan/cmake_install.cmake"
+		"/Users/amankarki/Downloads/projects/lattice/build-tsan/cmake_install.cmake",
+		"/Users/amankarki/Downloads/projects/lattice/build-tsan/core/cmake_install.cmake",
+		"/Users/amankarki/Downloads/projects/lattice/build-tsan/cli/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

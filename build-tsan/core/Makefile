@@ -144,6 +144,30 @@ scratch/fast:
 	cd /Users/amankarki/Downloads/projects/lattice/build-tsan && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/scratch.dir/build.make core/CMakeFiles/scratch.dir/build
 .PHONY : scratch/fast
 
+src/concurrent_index.o: src/concurrent_index.cpp.o
+.PHONY : src/concurrent_index.o
+
+# target to build an object file
+src/concurrent_index.cpp.o:
+	cd /Users/amankarki/Downloads/projects/lattice/build-tsan && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/lattice_core.dir/build.make core/CMakeFiles/lattice_core.dir/src/concurrent_index.cpp.o
+.PHONY : src/concurrent_index.cpp.o
+
+src/concurrent_index.i: src/concurrent_index.cpp.i
+.PHONY : src/concurrent_index.i
+
+# target to preprocess a source file
+src/concurrent_index.cpp.i:
+	cd /Users/amankarki/Downloads/projects/lattice/build-tsan && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/lattice_core.dir/build.make core/CMakeFiles/lattice_core.dir/src/concurrent_index.cpp.i
+.PHONY : src/concurrent_index.cpp.i
+
+src/concurrent_index.s: src/concurrent_index.cpp.s
+.PHONY : src/concurrent_index.s
+
+# target to generate assembly for a file
+src/concurrent_index.cpp.s:
+	cd /Users/amankarki/Downloads/projects/lattice/build-tsan && $(MAKE) $(MAKESILENT) -f core/CMakeFiles/lattice_core.dir/build.make core/CMakeFiles/lattice_core.dir/src/concurrent_index.cpp.s
+.PHONY : src/concurrent_index.cpp.s
+
 src/database.o: src/database.cpp.o
 .PHONY : src/database.o
 
@@ -370,6 +394,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... lattice_core"
 	@echo "... scratch"
+	@echo "... src/concurrent_index.o"
+	@echo "... src/concurrent_index.i"
+	@echo "... src/concurrent_index.s"
 	@echo "... src/database.o"
 	@echo "... src/database.i"
 	@echo "... src/database.s"

@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/lattice_core.dir/src/concurrent_index.cpp.o"
+  "CMakeFiles/lattice_core.dir/src/concurrent_index.cpp.o.d"
   "CMakeFiles/lattice_core.dir/src/database.cpp.o"
   "CMakeFiles/lattice_core.dir/src/database.cpp.o.d"
   "CMakeFiles/lattice_core.dir/src/distance.cpp.o"

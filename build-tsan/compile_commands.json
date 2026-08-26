@@ -49,6 +49,12 @@
 },
 {
   "directory": "/Users/amankarki/Downloads/projects/lattice/build-tsan/core",
+  "command": "/usr/bin/c++  -I/Users/amankarki/Downloads/projects/lattice/core/include -fsanitize=thread -g -O1 -g -std=gnu++20 -arch arm64 -o CMakeFiles/lattice_core.dir/src/concurrent_index.cpp.o -c /Users/amankarki/Downloads/projects/lattice/core/src/concurrent_index.cpp",
+  "file": "/Users/amankarki/Downloads/projects/lattice/core/src/concurrent_index.cpp",
+  "output": "core/CMakeFiles/lattice_core.dir/src/concurrent_index.cpp.o"
+},
+{
+  "directory": "/Users/amankarki/Downloads/projects/lattice/build-tsan/core",
   "command": "/usr/bin/c++  -I/Users/amankarki/Downloads/projects/lattice/core/include -fsanitize=thread -g -O1 -g -std=gnu++20 -arch arm64 -o CMakeFiles/scratch.dir/src/main.cpp.o -c /Users/amankarki/Downloads/projects/lattice/core/src/main.cpp",
   "file": "/Users/amankarki/Downloads/projects/lattice/core/src/main.cpp",
   "output": "core/CMakeFiles/scratch.dir/src/main.cpp.o"

@@ -126,7 +126,7 @@ lattice_core: cmake_check_build_system
 
 # fast build rule for target.
 lattice_core/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lattice_core.dir/build.make CMakeFiles/lattice_core.dir/build
+	$(MAKE) $(MAKESILENT) -f core/CMakeFiles/lattice_core.dir/build.make core/CMakeFiles/lattice_core.dir/build
 .PHONY : lattice_core/fast
 
 #=============================================================================
@@ -139,248 +139,21 @@ scratch: cmake_check_build_system
 
 # fast build rule for target.
 scratch/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/scratch.dir/build.make CMakeFiles/scratch.dir/build
+	$(MAKE) $(MAKESILENT) -f core/CMakeFiles/scratch.dir/build.make core/CMakeFiles/scratch.dir/build
 .PHONY : scratch/fast
 
-core/src/concurrent_index.o: core/src/concurrent_index.cpp.o
-.PHONY : core/src/concurrent_index.o
+#=============================================================================
+# Target rules for targets named lattice
 
-# target to build an object file
-core/src/concurrent_index.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lattice_core.dir/build.make CMakeFiles/lattice_core.dir/core/src/concurrent_index.cpp.o
-.PHONY : core/src/concurrent_index.cpp.o
+# Build rule for target.
+lattice: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lattice
+.PHONY : lattice
 
-core/src/concurrent_index.i: core/src/concurrent_index.cpp.i
-.PHONY : core/src/concurrent_index.i
-
-# target to preprocess a source file
-core/src/concurrent_index.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lattice_core.dir/build.make CMakeFiles/lattice_core.dir/core/src/concurrent_index.cpp.i
-.PHONY : core/src/concurrent_index.cpp.i
-
-core/src/concurrent_index.s: core/src/concurrent_index.cpp.s
-.PHONY : core/src/concurrent_index.s
-
-# target to generate assembly for a file
-core/src/concurrent_index.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lattice_core.dir/build.make CMakeFiles/lattice_core.dir/core/src/concurrent_index.cpp.s
-.PHONY : core/src/concurrent_index.cpp.s
-
-core/src/database.o: core/src/database.cpp.o
-.PHONY : core/src/database.o
-
-# target to build an object file
-core/src/database.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lattice_core.dir/build.make CMakeFiles/lattice_core.dir/core/src/database.cpp.o
-.PHONY : core/src/database.cpp.o
-
-core/src/database.i: core/src/database.cpp.i
-.PHONY : core/src/database.i
-
-# target to preprocess a source file
-core/src/database.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lattice_core.dir/build.make CMakeFiles/lattice_core.dir/core/src/database.cpp.i
-.PHONY : core/src/database.cpp.i
-
-core/src/database.s: core/src/database.cpp.s
-.PHONY : core/src/database.s
-
-# target to generate assembly for a file
-core/src/database.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lattice_core.dir/build.make CMakeFiles/lattice_core.dir/core/src/database.cpp.s
-.PHONY : core/src/database.cpp.s
-
-core/src/distance.o: core/src/distance.cpp.o
-.PHONY : core/src/distance.o
-
-# target to build an object file
-core/src/distance.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lattice_core.dir/build.make CMakeFiles/lattice_core.dir/core/src/distance.cpp.o
-.PHONY : core/src/distance.cpp.o
-
-core/src/distance.i: core/src/distance.cpp.i
-.PHONY : core/src/distance.i
-
-# target to preprocess a source file
-core/src/distance.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lattice_core.dir/build.make CMakeFiles/lattice_core.dir/core/src/distance.cpp.i
-.PHONY : core/src/distance.cpp.i
-
-core/src/distance.s: core/src/distance.cpp.s
-.PHONY : core/src/distance.s
-
-# target to generate assembly for a file
-core/src/distance.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lattice_core.dir/build.make CMakeFiles/lattice_core.dir/core/src/distance.cpp.s
-.PHONY : core/src/distance.cpp.s
-
-core/src/flat_store.o: core/src/flat_store.cpp.o
-.PHONY : core/src/flat_store.o
-
-# target to build an object file
-core/src/flat_store.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lattice_core.dir/build.make CMakeFiles/lattice_core.dir/core/src/flat_store.cpp.o
-.PHONY : core/src/flat_store.cpp.o
-
-core/src/flat_store.i: core/src/flat_store.cpp.i
-.PHONY : core/src/flat_store.i
-
-# target to preprocess a source file
-core/src/flat_store.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lattice_core.dir/build.make CMakeFiles/lattice_core.dir/core/src/flat_store.cpp.i
-.PHONY : core/src/flat_store.cpp.i
-
-core/src/flat_store.s: core/src/flat_store.cpp.s
-.PHONY : core/src/flat_store.s
-
-# target to generate assembly for a file
-core/src/flat_store.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lattice_core.dir/build.make CMakeFiles/lattice_core.dir/core/src/flat_store.cpp.s
-.PHONY : core/src/flat_store.cpp.s
-
-core/src/hnsw.o: core/src/hnsw.cpp.o
-.PHONY : core/src/hnsw.o
-
-# target to build an object file
-core/src/hnsw.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lattice_core.dir/build.make CMakeFiles/lattice_core.dir/core/src/hnsw.cpp.o
-.PHONY : core/src/hnsw.cpp.o
-
-core/src/hnsw.i: core/src/hnsw.cpp.i
-.PHONY : core/src/hnsw.i
-
-# target to preprocess a source file
-core/src/hnsw.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lattice_core.dir/build.make CMakeFiles/lattice_core.dir/core/src/hnsw.cpp.i
-.PHONY : core/src/hnsw.cpp.i
-
-core/src/hnsw.s: core/src/hnsw.cpp.s
-.PHONY : core/src/hnsw.s
-
-# target to generate assembly for a file
-core/src/hnsw.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lattice_core.dir/build.make CMakeFiles/lattice_core.dir/core/src/hnsw.cpp.s
-.PHONY : core/src/hnsw.cpp.s
-
-core/src/main.o: core/src/main.cpp.o
-.PHONY : core/src/main.o
-
-# target to build an object file
-core/src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/scratch.dir/build.make CMakeFiles/scratch.dir/core/src/main.cpp.o
-.PHONY : core/src/main.cpp.o
-
-core/src/main.i: core/src/main.cpp.i
-.PHONY : core/src/main.i
-
-# target to preprocess a source file
-core/src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/scratch.dir/build.make CMakeFiles/scratch.dir/core/src/main.cpp.i
-.PHONY : core/src/main.cpp.i
-
-core/src/main.s: core/src/main.cpp.s
-.PHONY : core/src/main.s
-
-# target to generate assembly for a file
-core/src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/scratch.dir/build.make CMakeFiles/scratch.dir/core/src/main.cpp.s
-.PHONY : core/src/main.cpp.s
-
-core/src/quantizer.o: core/src/quantizer.cpp.o
-.PHONY : core/src/quantizer.o
-
-# target to build an object file
-core/src/quantizer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lattice_core.dir/build.make CMakeFiles/lattice_core.dir/core/src/quantizer.cpp.o
-.PHONY : core/src/quantizer.cpp.o
-
-core/src/quantizer.i: core/src/quantizer.cpp.i
-.PHONY : core/src/quantizer.i
-
-# target to preprocess a source file
-core/src/quantizer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lattice_core.dir/build.make CMakeFiles/lattice_core.dir/core/src/quantizer.cpp.i
-.PHONY : core/src/quantizer.cpp.i
-
-core/src/quantizer.s: core/src/quantizer.cpp.s
-.PHONY : core/src/quantizer.s
-
-# target to generate assembly for a file
-core/src/quantizer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lattice_core.dir/build.make CMakeFiles/lattice_core.dir/core/src/quantizer.cpp.s
-.PHONY : core/src/quantizer.cpp.s
-
-core/src/search.o: core/src/search.cpp.o
-.PHONY : core/src/search.o
-
-# target to build an object file
-core/src/search.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lattice_core.dir/build.make CMakeFiles/lattice_core.dir/core/src/search.cpp.o
-.PHONY : core/src/search.cpp.o
-
-core/src/search.i: core/src/search.cpp.i
-.PHONY : core/src/search.i
-
-# target to preprocess a source file
-core/src/search.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lattice_core.dir/build.make CMakeFiles/lattice_core.dir/core/src/search.cpp.i
-.PHONY : core/src/search.cpp.i
-
-core/src/search.s: core/src/search.cpp.s
-.PHONY : core/src/search.s
-
-# target to generate assembly for a file
-core/src/search.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lattice_core.dir/build.make CMakeFiles/lattice_core.dir/core/src/search.cpp.s
-.PHONY : core/src/search.cpp.s
-
-core/src/segment.o: core/src/segment.cpp.o
-.PHONY : core/src/segment.o
-
-# target to build an object file
-core/src/segment.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lattice_core.dir/build.make CMakeFiles/lattice_core.dir/core/src/segment.cpp.o
-.PHONY : core/src/segment.cpp.o
-
-core/src/segment.i: core/src/segment.cpp.i
-.PHONY : core/src/segment.i
-
-# target to preprocess a source file
-core/src/segment.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lattice_core.dir/build.make CMakeFiles/lattice_core.dir/core/src/segment.cpp.i
-.PHONY : core/src/segment.cpp.i
-
-core/src/segment.s: core/src/segment.cpp.s
-.PHONY : core/src/segment.s
-
-# target to generate assembly for a file
-core/src/segment.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lattice_core.dir/build.make CMakeFiles/lattice_core.dir/core/src/segment.cpp.s
-.PHONY : core/src/segment.cpp.s
-
-core/src/wal.o: core/src/wal.cpp.o
-.PHONY : core/src/wal.o
-
-# target to build an object file
-core/src/wal.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lattice_core.dir/build.make CMakeFiles/lattice_core.dir/core/src/wal.cpp.o
-.PHONY : core/src/wal.cpp.o
-
-core/src/wal.i: core/src/wal.cpp.i
-.PHONY : core/src/wal.i
-
-# target to preprocess a source file
-core/src/wal.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lattice_core.dir/build.make CMakeFiles/lattice_core.dir/core/src/wal.cpp.i
-.PHONY : core/src/wal.cpp.i
-
-core/src/wal.s: core/src/wal.cpp.s
-.PHONY : core/src/wal.s
-
-# target to generate assembly for a file
-core/src/wal.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lattice_core.dir/build.make CMakeFiles/lattice_core.dir/core/src/wal.cpp.s
-.PHONY : core/src/wal.cpp.s
+# fast build rule for target.
+lattice/fast:
+	$(MAKE) $(MAKESILENT) -f cli/CMakeFiles/lattice.dir/build.make cli/CMakeFiles/lattice.dir/build
+.PHONY : lattice/fast
 
 # Help Target
 help:
@@ -390,38 +163,9 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... lattice"
 	@echo "... lattice_core"
 	@echo "... scratch"
-	@echo "... core/src/concurrent_index.o"
-	@echo "... core/src/concurrent_index.i"
-	@echo "... core/src/concurrent_index.s"
-	@echo "... core/src/database.o"
-	@echo "... core/src/database.i"
-	@echo "... core/src/database.s"
-	@echo "... core/src/distance.o"
-	@echo "... core/src/distance.i"
-	@echo "... core/src/distance.s"
-	@echo "... core/src/flat_store.o"
-	@echo "... core/src/flat_store.i"
-	@echo "... core/src/flat_store.s"
-	@echo "... core/src/hnsw.o"
-	@echo "... core/src/hnsw.i"
-	@echo "... core/src/hnsw.s"
-	@echo "... core/src/main.o"
-	@echo "... core/src/main.i"
-	@echo "... core/src/main.s"
-	@echo "... core/src/quantizer.o"
-	@echo "... core/src/quantizer.i"
-	@echo "... core/src/quantizer.s"
-	@echo "... core/src/search.o"
-	@echo "... core/src/search.i"
-	@echo "... core/src/search.s"
-	@echo "... core/src/segment.o"
-	@echo "... core/src/segment.i"
-	@echo "... core/src/segment.s"
-	@echo "... core/src/wal.o"
-	@echo "... core/src/wal.i"
-	@echo "... core/src/wal.s"
 .PHONY : help
 
 
