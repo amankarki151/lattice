@@ -6,6 +6,7 @@ add_library(lattice_core
     src/distance.cpp
     src/search.cpp
     src/hnsw.cpp
+    src/quantizer.cpp
 )
 
 target_include_directories(lattice_core PUBLIC include)
