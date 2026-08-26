@@ -1,0 +1,4 @@
+/Users/amankarki/Downloads/projects/lattice/build-tsan/CMakeFiles/lattice_core.dir
+/Users/amankarki/Downloads/projects/lattice/build-tsan/CMakeFiles/scratch.dir
+/Users/amankarki/Downloads/projects/lattice/build-tsan/CMakeFiles/edit_cache.dir
+/Users/amankarki/Downloads/projects/lattice/build-tsan/CMakeFiles/rebuild_cache.dir

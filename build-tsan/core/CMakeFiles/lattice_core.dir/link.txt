@@ -1,0 +1,2 @@
+/usr/bin/ar qc liblattice_core.a CMakeFiles/lattice_core.dir/src/flat_store.cpp.o CMakeFiles/lattice_core.dir/src/wal.cpp.o CMakeFiles/lattice_core.dir/src/segment.cpp.o CMakeFiles/lattice_core.dir/src/database.cpp.o CMakeFiles/lattice_core.dir/src/distance.cpp.o CMakeFiles/lattice_core.dir/src/search.cpp.o CMakeFiles/lattice_core.dir/src/hnsw.cpp.o CMakeFiles/lattice_core.dir/src/quantizer.cpp.o
+/usr/bin/ranlib liblattice_core.a
