@@ -2,6 +2,7 @@
 # build output
 build/
 build-tsan/
+build-test/
 *.o
 *.a
 *.so
