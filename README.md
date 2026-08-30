@@ -30,6 +30,31 @@ Lattice inserts one vector at a time through an exclusive lock, with
 no batch-insert path yet — and partly a benchmark-harness limitation,
 since Qdrant and Chroma are both inserted here via their bulk APIs.
 
+### SIFT1M (1,000,000 base vectors, 128 dimensions, k=10, ef=50)
+
+| system | build (s) | recall | p50 (µs) | p99 (µs) |
+|---|---|---|---|---|
+| Lattice | 3954.1 | 0.8831 | 1325 | 2045 |
+| Qdrant (in-memory)* | 333.7 | 0.9993 | 232946 | 1728312 |
+| Chroma | 105.1 | 0.9775 | 471 | 577 |
+
+\* Qdrant's own client warned before this run started: *"Local mode
+is not recommended for collections with more than 20,000 points."*
+A p99 of 1.7 seconds confirms it — this reflects local mode's storage
+backend at 50x its recommended limit, not Qdrant's real capability.
+Measuring Qdrant fairly at this scale would require Docker or Cloud
+mode. This row is included for completeness, not as a fair
+comparison.
+
+Chroma's numbers here are a legitimate comparison point and it holds
+up well at this scale. Lattice's recall dropped from 0.9540 (at 10k
+vectors) to 0.8831 (at 1M vectors) at the same ef — consistent with
+more vectors meaning more true neighbours competing for the same
+top-k slots; a higher ef would recover recall at this size. The
+build-time gap seen at 10k also holds at 1M scale — Lattice takes
+3954s against Chroma's 105s — confirming this is a systemic
+architectural cost, not an artifact of the smaller dataset.
+
 This is not a like-for-like comparison. Qdrant and Chroma are full
 services with networking, persistence policies, filtering, and
 metadata support. Lattice is an embedded library. Some of their
@@ -37,9 +62,7 @@ latency is buying features Lattice doesn't have. Qdrant runs in
 `:memory:` mode here specifically to remove the network hop, as the
 closest available approximation to comparing against a library.
 
-Full methodology and raw output in
-[bench/results.md](bench/results.md). A full SIFT1M run is in
-progress and will be added once complete.
+Full methodology and raw output in [bench/results.md](bench/results.md).
 
 ## Status
 
