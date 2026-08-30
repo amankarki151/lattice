@@ -1,0 +1,128 @@
+[
+{
+  "directory": "/Users/amankarki/Downloads/projects/lattice/build-test/core",
+  "command": "/usr/bin/c++  -I/Users/amankarki/Downloads/projects/lattice/core/include -g -std=gnu++20 -arch arm64 -o CMakeFiles/lattice_core.dir/src/flat_store.cpp.o -c /Users/amankarki/Downloads/projects/lattice/core/src/flat_store.cpp",
+  "file": "/Users/amankarki/Downloads/projects/lattice/core/src/flat_store.cpp",
+  "output": "core/CMakeFiles/lattice_core.dir/src/flat_store.cpp.o"
+},
+{
+  "directory": "/Users/amankarki/Downloads/projects/lattice/build-test/core",
+  "command": "/usr/bin/c++  -I/Users/amankarki/Downloads/projects/lattice/core/include -g -std=gnu++20 -arch arm64 -o CMakeFiles/lattice_core.dir/src/wal.cpp.o -c /Users/amankarki/Downloads/projects/lattice/core/src/wal.cpp",
+  "file": "/Users/amankarki/Downloads/projects/lattice/core/src/wal.cpp",
+  "output": "core/CMakeFiles/lattice_core.dir/src/wal.cpp.o"
+},
+{
+  "directory": "/Users/amankarki/Downloads/projects/lattice/build-test/core",
+  "command": "/usr/bin/c++  -I/Users/amankarki/Downloads/projects/lattice/core/include -g -std=gnu++20 -arch arm64 -o CMakeFiles/lattice_core.dir/src/segment.cpp.o -c /Users/amankarki/Downloads/projects/lattice/core/src/segment.cpp",
+  "file": "/Users/amankarki/Downloads/projects/lattice/core/src/segment.cpp",
+  "output": "core/CMakeFiles/lattice_core.dir/src/segment.cpp.o"
+},
+{
+  "directory": "/Users/amankarki/Downloads/projects/lattice/build-test/core",
+  "command": "/usr/bin/c++  -I/Users/amankarki/Downloads/projects/lattice/core/include -g -std=gnu++20 -arch arm64 -o CMakeFiles/lattice_core.dir/src/database.cpp.o -c /Users/amankarki/Downloads/projects/lattice/core/src/database.cpp",
+  "file": "/Users/amankarki/Downloads/projects/lattice/core/src/database.cpp",
+  "output": "core/CMakeFiles/lattice_core.dir/src/database.cpp.o"
+},
+{
+  "directory": "/Users/amankarki/Downloads/projects/lattice/build-test/core",
+  "command": "/usr/bin/c++  -I/Users/amankarki/Downloads/projects/lattice/core/include -g -std=gnu++20 -arch arm64 -o CMakeFiles/lattice_core.dir/src/distance.cpp.o -c /Users/amankarki/Downloads/projects/lattice/core/src/distance.cpp",
+  "file": "/Users/amankarki/Downloads/projects/lattice/core/src/distance.cpp",
+  "output": "core/CMakeFiles/lattice_core.dir/src/distance.cpp.o"
+},
+{
+  "directory": "/Users/amankarki/Downloads/projects/lattice/build-test/core",
+  "command": "/usr/bin/c++  -I/Users/amankarki/Downloads/projects/lattice/core/include -g -std=gnu++20 -arch arm64 -o CMakeFiles/lattice_core.dir/src/search.cpp.o -c /Users/amankarki/Downloads/projects/lattice/core/src/search.cpp",
+  "file": "/Users/amankarki/Downloads/projects/lattice/core/src/search.cpp",
+  "output": "core/CMakeFiles/lattice_core.dir/src/search.cpp.o"
+},
+{
+  "directory": "/Users/amankarki/Downloads/projects/lattice/build-test/core",
+  "command": "/usr/bin/c++  -I/Users/amankarki/Downloads/projects/lattice/core/include -g -std=gnu++20 -arch arm64 -o CMakeFiles/lattice_core.dir/src/hnsw.cpp.o -c /Users/amankarki/Downloads/projects/lattice/core/src/hnsw.cpp",
+  "file": "/Users/amankarki/Downloads/projects/lattice/core/src/hnsw.cpp",
+  "output": "core/CMakeFiles/lattice_core.dir/src/hnsw.cpp.o"
+},
+{
+  "directory": "/Users/amankarki/Downloads/projects/lattice/build-test/core",
+  "command": "/usr/bin/c++  -I/Users/amankarki/Downloads/projects/lattice/core/include -g -std=gnu++20 -arch arm64 -o CMakeFiles/lattice_core.dir/src/quantizer.cpp.o -c /Users/amankarki/Downloads/projects/lattice/core/src/quantizer.cpp",
+  "file": "/Users/amankarki/Downloads/projects/lattice/core/src/quantizer.cpp",
+  "output": "core/CMakeFiles/lattice_core.dir/src/quantizer.cpp.o"
+},
+{
+  "directory": "/Users/amankarki/Downloads/projects/lattice/build-test/core",
+  "command": "/usr/bin/c++  -I/Users/amankarki/Downloads/projects/lattice/core/include -g -std=gnu++20 -arch arm64 -o CMakeFiles/lattice_core.dir/src/concurrent_index.cpp.o -c /Users/amankarki/Downloads/projects/lattice/core/src/concurrent_index.cpp",
+  "file": "/Users/amankarki/Downloads/projects/lattice/core/src/concurrent_index.cpp",
+  "output": "core/CMakeFiles/lattice_core.dir/src/concurrent_index.cpp.o"
+},
+{
+  "directory": "/Users/amankarki/Downloads/projects/lattice/build-test/core",
+  "command": "/usr/bin/c++  -I/Users/amankarki/Downloads/projects/lattice/core/include -g -std=gnu++20 -arch arm64 -o CMakeFiles/scratch.dir/src/main.cpp.o -c /Users/amankarki/Downloads/projects/lattice/core/src/main.cpp",
+  "file": "/Users/amankarki/Downloads/projects/lattice/core/src/main.cpp",
+  "output": "core/CMakeFiles/scratch.dir/src/main.cpp.o"
+},
+{
+  "directory": "/Users/amankarki/Downloads/projects/lattice/build-test/core/tests",
+  "command": "/usr/bin/c++  -I/Users/amankarki/Downloads/projects/lattice/core/include -isystem /Users/amankarki/Downloads/projects/lattice/build-test/_deps/googletest-src/googletest/include -isystem /Users/amankarki/Downloads/projects/lattice/build-test/_deps/googletest-src/googletest -g -std=gnu++20 -arch arm64 -o CMakeFiles/lattice_tests.dir/test_wal.cpp.o -c /Users/amankarki/Downloads/projects/lattice/core/tests/test_wal.cpp",
+  "file": "/Users/amankarki/Downloads/projects/lattice/core/tests/test_wal.cpp",
+  "output": "core/tests/CMakeFiles/lattice_tests.dir/test_wal.cpp.o"
+},
+{
+  "directory": "/Users/amankarki/Downloads/projects/lattice/build-test/core/tests",
+  "command": "/usr/bin/c++  -I/Users/amankarki/Downloads/projects/lattice/core/include -isystem /Users/amankarki/Downloads/projects/lattice/build-test/_deps/googletest-src/googletest/include -isystem /Users/amankarki/Downloads/projects/lattice/build-test/_deps/googletest-src/googletest -g -std=gnu++20 -arch arm64 -o CMakeFiles/lattice_tests.dir/test_segment.cpp.o -c /Users/amankarki/Downloads/projects/lattice/core/tests/test_segment.cpp",
+  "file": "/Users/amankarki/Downloads/projects/lattice/core/tests/test_segment.cpp",
+  "output": "core/tests/CMakeFiles/lattice_tests.dir/test_segment.cpp.o"
+},
+{
+  "directory": "/Users/amankarki/Downloads/projects/lattice/build-test/core/tests",
+  "command": "/usr/bin/c++  -I/Users/amankarki/Downloads/projects/lattice/core/include -isystem /Users/amankarki/Downloads/projects/lattice/build-test/_deps/googletest-src/googletest/include -isystem /Users/amankarki/Downloads/projects/lattice/build-test/_deps/googletest-src/googletest -g -std=gnu++20 -arch arm64 -o CMakeFiles/lattice_tests.dir/test_search.cpp.o -c /Users/amankarki/Downloads/projects/lattice/core/tests/test_search.cpp",
+  "file": "/Users/amankarki/Downloads/projects/lattice/core/tests/test_search.cpp",
+  "output": "core/tests/CMakeFiles/lattice_tests.dir/test_search.cpp.o"
+},
+{
+  "directory": "/Users/amankarki/Downloads/projects/lattice/build-test/core/tests",
+  "command": "/usr/bin/c++  -I/Users/amankarki/Downloads/projects/lattice/core/include -isystem /Users/amankarki/Downloads/projects/lattice/build-test/_deps/googletest-src/googletest/include -isystem /Users/amankarki/Downloads/projects/lattice/build-test/_deps/googletest-src/googletest -g -std=gnu++20 -arch arm64 -o CMakeFiles/lattice_tests.dir/test_hnsw.cpp.o -c /Users/amankarki/Downloads/projects/lattice/core/tests/test_hnsw.cpp",
+  "file": "/Users/amankarki/Downloads/projects/lattice/core/tests/test_hnsw.cpp",
+  "output": "core/tests/CMakeFiles/lattice_tests.dir/test_hnsw.cpp.o"
+},
+{
+  "directory": "/Users/amankarki/Downloads/projects/lattice/build-test/core/tests",
+  "command": "/usr/bin/c++  -I/Users/amankarki/Downloads/projects/lattice/core/include -isystem /Users/amankarki/Downloads/projects/lattice/build-test/_deps/googletest-src/googletest/include -isystem /Users/amankarki/Downloads/projects/lattice/build-test/_deps/googletest-src/googletest -g -std=gnu++20 -arch arm64 -o CMakeFiles/lattice_tests.dir/test_quantizer.cpp.o -c /Users/amankarki/Downloads/projects/lattice/core/tests/test_quantizer.cpp",
+  "file": "/Users/amankarki/Downloads/projects/lattice/core/tests/test_quantizer.cpp",
+  "output": "core/tests/CMakeFiles/lattice_tests.dir/test_quantizer.cpp.o"
+},
+{
+  "directory": "/Users/amankarki/Downloads/projects/lattice/build-test/_deps/googletest-build/googlemock",
+  "command": "/usr/bin/c++  -I/Users/amankarki/Downloads/projects/lattice/build-test/_deps/googletest-src/googlemock/include -I/Users/amankarki/Downloads/projects/lattice/build-test/_deps/googletest-src/googlemock -isystem /Users/amankarki/Downloads/projects/lattice/build-test/_deps/googletest-src/googletest/include -isystem /Users/amankarki/Downloads/projects/lattice/build-test/_deps/googletest-src/googletest -g -std=c++20 -arch arm64  -DGTEST_HAS_PTHREAD=1   -o CMakeFiles/gmock.dir/src/gmock-all.cc.o -c /Users/amankarki/Downloads/projects/lattice/build-test/_deps/googletest-src/googlemock/src/gmock-all.cc",
+  "file": "/Users/amankarki/Downloads/projects/lattice/build-test/_deps/googletest-src/googlemock/src/gmock-all.cc",
+  "output": "_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o"
+},
+{
+  "directory": "/Users/amankarki/Downloads/projects/lattice/build-test/_deps/googletest-build/googlemock",
+  "command": "/usr/bin/c++  -isystem /Users/amankarki/Downloads/projects/lattice/build-test/_deps/googletest-src/googlemock/include -isystem /Users/amankarki/Downloads/projects/lattice/build-test/_deps/googletest-src/googlemock -isystem /Users/amankarki/Downloads/projects/lattice/build-test/_deps/googletest-src/googletest/include -isystem /Users/amankarki/Downloads/projects/lattice/build-test/_deps/googletest-src/googletest -g -std=c++20 -arch arm64  -DGTEST_HAS_PTHREAD=1   -o CMakeFiles/gmock_main.dir/src/gmock_main.cc.o -c /Users/amankarki/Downloads/projects/lattice/build-test/_deps/googletest-src/googlemock/src/gmock_main.cc",
+  "file": "/Users/amankarki/Downloads/projects/lattice/build-test/_deps/googletest-src/googlemock/src/gmock_main.cc",
+  "output": "_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o"
+},
+{
+  "directory": "/Users/amankarki/Downloads/projects/lattice/build-test/_deps/googletest-build/googletest",
+  "command": "/usr/bin/c++  -I/Users/amankarki/Downloads/projects/lattice/build-test/_deps/googletest-src/googletest/include -I/Users/amankarki/Downloads/projects/lattice/build-test/_deps/googletest-src/googletest -g -std=c++20 -arch arm64  -DGTEST_HAS_PTHREAD=1   -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /Users/amankarki/Downloads/projects/lattice/build-test/_deps/googletest-src/googletest/src/gtest-all.cc",
+  "file": "/Users/amankarki/Downloads/projects/lattice/build-test/_deps/googletest-src/googletest/src/gtest-all.cc",
+  "output": "_deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o"
+},
+{
+  "directory": "/Users/amankarki/Downloads/projects/lattice/build-test/_deps/googletest-build/googletest",
+  "command": "/usr/bin/c++  -isystem /Users/amankarki/Downloads/projects/lattice/build-test/_deps/googletest-src/googletest/include -isystem /Users/amankarki/Downloads/projects/lattice/build-test/_deps/googletest-src/googletest -g -std=c++20 -arch arm64  -DGTEST_HAS_PTHREAD=1   -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /Users/amankarki/Downloads/projects/lattice/build-test/_deps/googletest-src/googletest/src/gtest_main.cc",
+  "file": "/Users/amankarki/Downloads/projects/lattice/build-test/_deps/googletest-src/googletest/src/gtest_main.cc",
+  "output": "_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o"
+},
+{
+  "directory": "/Users/amankarki/Downloads/projects/lattice/build-test/cli",
+  "command": "/usr/bin/c++  -I/Users/amankarki/Downloads/projects/lattice/core/include -g -std=gnu++20 -arch arm64 -o CMakeFiles/lattice.dir/main.cpp.o -c /Users/amankarki/Downloads/projects/lattice/cli/main.cpp",
+  "file": "/Users/amankarki/Downloads/projects/lattice/cli/main.cpp",
+  "output": "cli/CMakeFiles/lattice.dir/main.cpp.o"
+},
+{
+  "directory": "/Users/amankarki/Downloads/projects/lattice/build-test/bindings",
+  "command": "/usr/bin/c++ -Dlattice_py_EXPORTS -I/Users/amankarki/Downloads/projects/lattice/core/include -isystem /Users/amankarki/Downloads/projects/lattice/.venv-tools/lib/python3.12/site-packages/pybind11/include -isystem /opt/homebrew/opt/python@3.12/Frameworks/Python.framework/Versions/3.12/include/python3.12 -g -std=gnu++20 -arch arm64 -fPIC -fvisibility=hidden -o CMakeFiles/lattice_py.dir/lattice_py.cpp.o -c /Users/amankarki/Downloads/projects/lattice/bindings/lattice_py.cpp",
+  "file": "/Users/amankarki/Downloads/projects/lattice/bindings/lattice_py.cpp",
+  "output": "bindings/CMakeFiles/lattice_py.dir/lattice_py.cpp.o"
+}
+]

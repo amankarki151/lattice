@@ -17,3 +17,9 @@ target_link_libraries(lattice_core PUBLIC Threads::Threads)
 
 add_executable(scratch src/main.cpp)
 target_link_libraries(scratch PRIVATE lattice_core)
+
+option(LATTICE_BUILD_TESTS "Build the test suite" OFF)
+if(LATTICE_BUILD_TESTS)
+    enable_testing()
+    add_subdirectory(tests)
+endif()
