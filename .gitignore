@@ -18,6 +18,7 @@ __pycache__/
 .venv/
 venv/
 .venv-tools/
+bench/.venv/
 
 # secrets
 .env
@@ -26,3 +27,6 @@ venv/
 *.wal
 
 notes.md
+
+# benchmark datasets - large, downloadable, not ours to redistribute
+bench/data/
