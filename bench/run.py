@@ -30,9 +30,10 @@ import numpy as np
 
 from fvecs import read_fvecs, read_ivecs
 
+_BUILD_DIR_NAME = os.environ.get("LATTICE_BUILD_DIR", "build-test")
 _BUILD_DIR = os.path.join(
     os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-    "build-test",
+    _BUILD_DIR_NAME,
     "bindings",
 )
 sys.path.insert(0, _BUILD_DIR)

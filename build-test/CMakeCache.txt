@@ -319,6 +319,9 @@ INSTALL_GTEST:BOOL=ON
 //Build the test suite
 LATTICE_BUILD_TESTS:BOOL=ON
 
+//Build with coverage instrumentation
+LATTICE_COVERAGE:BOOL=OFF
+
 //Overwrite cached values read from Python library (classic search).
 // Turn off if cross-compiling and manually setting these values.
 PYBIND11_PYTHONLIBS_OVERWRITE:BOOL=ON

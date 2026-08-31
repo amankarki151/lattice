@@ -40,6 +40,7 @@ events:
       - "/pkg/env/global/bin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
+      - "/Users/amankarki/.vscode/extensions/ms-python.debugpy-2026.6.0/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/Users/amankarki/Downloads/projects/lattice/.venv-tools/bin/uname"
       - "/Users/amankarki/.npm-global/bin/uname"
@@ -78,6 +79,7 @@ events:
         - "/Users/amankarki/.npm-global/bin"
         - "/opt/anaconda3/bin"
         - "/opt/anaconda3/condabin"
+        - "/Users/amankarki/.vscode/extensions/ms-python.debugpy-2026.6.0/bundled/scripts/noConfigScripts"
   -
     kind: "message-v1"
     backtrace:
@@ -125,6 +127,7 @@ events:
       - "/pkg/env/global/bin/"
       - "/opt/anaconda3/bin/"
       - "/opt/anaconda3/condabin/"
+      - "/Users/amankarki/.vscode/extensions/ms-python.debugpy-2026.6.0/bundled/scripts/noConfigScripts/"
     searched_directories:
       - "/Users/amankarki/Downloads/projects/lattice/.venv-tools/bin/install_name_tool"
       - "/Users/amankarki/.npm-global/bin/install_name_tool"
@@ -163,5 +166,6 @@ events:
         - "/Users/amankarki/.npm-global/bin"
         - "/opt/anaconda3/bin"
         - "/opt/anaconda3/condabin"
+        - "/Users/amankarki/.vscode/extensions/ms-python.debugpy-2026.6.0/bundled/scripts/noConfigScripts"
       CMAKE_INSTALL_PREFIX: "/usr/local"
 ...

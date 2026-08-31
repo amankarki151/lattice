@@ -6,7 +6,7 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/Users/amankarki/Downloads/projects/lattice/core/include
 
-CXX_FLAGSarm64 = -g -std=gnu++20 -arch arm64
+CXX_FLAGSarm64 = -g -std=gnu++20 -arch arm64 -fPIC
 
-CXX_FLAGS = -g -std=gnu++20 -arch arm64
+CXX_FLAGS = -g -std=gnu++20 -arch arm64 -fPIC
 

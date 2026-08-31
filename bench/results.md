@@ -7,7 +7,7 @@ Ground truth is SIFT's own precomputed neighbour list.
 
 | system | build (s) | recall | p50 (us) | p99 (us) | mean (us) |
 |---|---|---|---|---|---|
-| Lattice (ef=50) | 18.7 | 0.9540 | 611 | 815 | 578 |
+| Lattice (ef=50) | 18.5 | 0.9540 | 581 | 789 | 557 |
 
 ## Caveats
 

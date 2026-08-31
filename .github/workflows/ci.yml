@@ -86,6 +86,8 @@ jobs:
 
       - name: Run benchmark
         working-directory: bench
+        env:
+          LATTICE_BUILD_DIR: build
         run: python run.py --skip qdrant,chroma --json current.json
 
       - name: Check for regression

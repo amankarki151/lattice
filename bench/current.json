@@ -5,7 +5,7 @@
   "k": 10,
   "ef": 50,
   "recall": 0.954,
-  "p50_us": 611,
-  "p99_us": 815,
-  "build_seconds": 18.7
+  "p50_us": 581,
+  "p99_us": 789,
+  "build_seconds": 18.5
 }
