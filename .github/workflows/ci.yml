@@ -78,8 +78,9 @@ jobs:
 
       - name: Download SIFT small
         if: steps.cache-sift.outputs.cache-hit != 'true'
-        working-directory: bench/data
         run: |
+          mkdir -p bench/data
+          cd bench/data
           curl -O ftp://ftp.irisa.fr/local/texmex/corpus/siftsmall.tar.gz
           tar -xzf siftsmall.tar.gz
 
