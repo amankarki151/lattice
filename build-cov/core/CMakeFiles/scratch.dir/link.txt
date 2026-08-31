@@ -1,1 +1,0 @@
-/usr/bin/c++ -g -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names --coverage CMakeFiles/scratch.dir/src/main.cpp.o -o scratch  liblattice_core.a

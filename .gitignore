@@ -3,6 +3,7 @@
 build/
 build-tsan/
 build-test/
+build-cov/
 *.o
 *.a
 *.so
@@ -20,6 +21,7 @@ __pycache__/
 venv/
 .venv-tools/
 bench/.venv/
+
 
 # secrets
 .env
