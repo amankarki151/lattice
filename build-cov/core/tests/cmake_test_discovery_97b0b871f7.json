@@ -1,0 +1,192 @@
+{
+  "tests": 30,
+  "name": "AllTests",
+  "testsuites": [
+    {
+      "name": "WalTest",
+      "tests": 5,
+      "testsuite": [
+        {
+          "name": "ReplayOnEmptyFileReturnsNothing",
+          "file": "\/Users\/amankarki\/Downloads\/projects\/lattice\/core\/tests\/test_wal.cpp",
+          "line": 29
+        },
+        {
+          "name": "SingleRecordRoundTrips",
+          "file": "\/Users\/amankarki\/Downloads\/projects\/lattice\/core\/tests\/test_wal.cpp",
+          "line": 34
+        },
+        {
+          "name": "ManyRecordsReplayInOrder",
+          "file": "\/Users\/amankarki\/Downloads\/projects\/lattice\/core\/tests\/test_wal.cpp",
+          "line": 47
+        },
+        {
+          "name": "TornFinalRecordIsDroppedButEarlierOnesSurvive",
+          "file": "\/Users\/amankarki\/Downloads\/projects\/lattice\/core\/tests\/test_wal.cpp",
+          "line": 64
+        },
+        {
+          "name": "AppendsRatherThanOverwrites",
+          "file": "\/Users\/amankarki\/Downloads\/projects\/lattice\/core\/tests\/test_wal.cpp",
+          "line": 88
+        }
+      ]
+    },
+    {
+      "name": "SegmentTest",
+      "tests": 4,
+      "testsuite": [
+        {
+          "name": "MissingFileIsNotAnError",
+          "file": "\/Users\/amankarki\/Downloads\/projects\/lattice\/core\/tests\/test_segment.cpp",
+          "line": 30
+        },
+        {
+          "name": "RoundTripsAllRecords",
+          "file": "\/Users\/amankarki\/Downloads\/projects\/lattice\/core\/tests\/test_segment.cpp",
+          "line": 35
+        },
+        {
+          "name": "CorruptMagicIsRejected",
+          "file": "\/Users\/amankarki\/Downloads\/projects\/lattice\/core\/tests\/test_segment.cpp",
+          "line": 55
+        },
+        {
+          "name": "EmptySegmentIsValid",
+          "file": "\/Users\/amankarki\/Downloads\/projects\/lattice\/core\/tests\/test_segment.cpp",
+          "line": 71
+        }
+      ]
+    },
+    {
+      "name": "DistanceTest",
+      "tests": 2,
+      "testsuite": [
+        {
+          "name": "IdenticalVectorsAreZeroApart",
+          "file": "\/Users\/amankarki\/Downloads\/projects\/lattice\/core\/tests\/test_search.cpp",
+          "line": 17
+        },
+        {
+          "name": "MatchesHandCalculation",
+          "file": "\/Users\/amankarki\/Downloads\/projects\/lattice\/core\/tests\/test_search.cpp",
+          "line": 23
+        }
+      ]
+    },
+    {
+      "name": "BruteForceTest",
+      "tests": 5,
+      "testsuite": [
+        {
+          "name": "EmptyCollectionReturnsNothing",
+          "file": "\/Users\/amankarki\/Downloads\/projects\/lattice\/core\/tests\/test_search.cpp",
+          "line": 29
+        },
+        {
+          "name": "SelfMatchComesBackFirstAtZero",
+          "file": "\/Users\/amankarki\/Downloads\/projects\/lattice\/core\/tests\/test_search.cpp",
+          "line": 34
+        },
+        {
+          "name": "ResultsAreSortedNearestFirst",
+          "file": "\/Users\/amankarki\/Downloads\/projects\/lattice\/core\/tests\/test_search.cpp",
+          "line": 47
+        },
+        {
+          "name": "RespectsK",
+          "file": "\/Users\/amankarki\/Downloads\/projects\/lattice\/core\/tests\/test_search.cpp",
+          "line": 65
+        },
+        {
+          "name": "MismatchedDimensionsAreSkipped",
+          "file": "\/Users\/amankarki\/Downloads\/projects\/lattice\/core\/tests\/test_search.cpp",
+          "line": 75
+        }
+      ]
+    },
+    {
+      "name": "HnswTest",
+      "tests": 7,
+      "testsuite": [
+        {
+          "name": "EmptyIndexReturnsNothing",
+          "file": "\/Users\/amankarki\/Downloads\/projects\/lattice\/core\/tests\/test_hnsw.cpp",
+          "line": 29
+        },
+        {
+          "name": "SingleVectorIsFound",
+          "file": "\/Users\/amankarki\/Downloads\/projects\/lattice\/core\/tests\/test_hnsw.cpp",
+          "line": 35
+        },
+        {
+          "name": "SelfMatchAlwaysSucceeds",
+          "file": "\/Users\/amankarki\/Downloads\/projects\/lattice\/core\/tests\/test_hnsw.cpp",
+          "line": 50
+        },
+        {
+          "name": "NoIsolatedNodesAtLayerZero",
+          "file": "\/Users\/amankarki\/Downloads\/projects\/lattice\/core\/tests\/test_hnsw.cpp",
+          "line": 66
+        },
+        {
+          "name": "GraphIsFullyReachableAtLayerZero",
+          "file": "\/Users\/amankarki\/Downloads\/projects\/lattice\/core\/tests\/test_hnsw.cpp",
+          "line": 82
+        },
+        {
+          "name": "RecallAgainstBruteForceIsHigh",
+          "file": "\/Users\/amankarki\/Downloads\/projects\/lattice\/core\/tests\/test_hnsw.cpp",
+          "line": 106
+        },
+        {
+          "name": "EfIsRaisedToKWhenTooSmall",
+          "file": "\/Users\/amankarki\/Downloads\/projects\/lattice\/core\/tests\/test_hnsw.cpp",
+          "line": 141
+        }
+      ]
+    },
+    {
+      "name": "QuantizerTest",
+      "tests": 7,
+      "testsuite": [
+        {
+          "name": "EncodeBeforeTrainThrows",
+          "file": "\/Users\/amankarki\/Downloads\/projects\/lattice\/core\/tests\/test_quantizer.cpp",
+          "line": 27
+        },
+        {
+          "name": "TrainOnEmptySampleThrows",
+          "file": "\/Users\/amankarki\/Downloads\/projects\/lattice\/core\/tests\/test_quantizer.cpp",
+          "line": 32
+        },
+        {
+          "name": "OneByteBerDimension",
+          "file": "\/Users\/amankarki\/Downloads\/projects\/lattice\/core\/tests\/test_quantizer.cpp",
+          "line": 37
+        },
+        {
+          "name": "ErrorStaysWithinTheoreticalBound",
+          "file": "\/Users\/amankarki\/Downloads\/projects\/lattice\/core\/tests\/test_quantizer.cpp",
+          "line": 48
+        },
+        {
+          "name": "ValuesOutsideTrainedRangeAreClamped",
+          "file": "\/Users\/amankarki\/Downloads\/projects\/lattice\/core\/tests\/test_quantizer.cpp",
+          "line": 64
+        },
+        {
+          "name": "DistanceToQueryMatchesDecodeThenCompute",
+          "file": "\/Users\/amankarki\/Downloads\/projects\/lattice\/core\/tests\/test_quantizer.cpp",
+          "line": 77
+        },
+        {
+          "name": "ZeroRangeDimensionDoesNotDivideByZero",
+          "file": "\/Users\/amankarki\/Downloads\/projects\/lattice\/core\/tests\/test_quantizer.cpp",
+          "line": 98
+        }
+      ]
+    }
+  ]
+}

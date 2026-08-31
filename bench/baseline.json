@@ -1,0 +1,11 @@
+{
+  "_comment": "Performance baseline for CI regression detection. Numbers from siftsmall (10k vectors, dim 128, k=10, ef=50). Update deliberately when a change legitimately shifts performance, never to silence a failure.",
+  "dataset": "siftsmall",
+  "vectors": 10000,
+  "dim": 128,
+  "k": 10,
+  "ef": 50,
+  "recall": 0.9540,
+  "p50_us": 583,
+  "p99_us": 799
+}

@@ -22,6 +22,7 @@ import os
 import statistics
 import sys
 import time
+import json
 from dataclasses import dataclass, field
 from typing import Dict, List, Optional
 
@@ -31,7 +32,7 @@ from fvecs import read_fvecs, read_ivecs
 
 _BUILD_DIR = os.path.join(
     os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-    "build",
+    "build-test",
     "bindings",
 )
 sys.path.insert(0, _BUILD_DIR)
@@ -277,6 +278,35 @@ def write_markdown(results: List[Result], k: int, base_n: int, dim: int,
         f.write("\n".join(lines))
     print(f"wrote {path}")
 
+def write_json(results: List[Result], k: int, base_n: int, dim: int,
+                ef: int, path: str):
+    """Machine-readable output for the CI regression check.
+
+    Only Lattice's numbers go in here - the point is comparing Lattice
+    against its own past self, not against whatever version of Qdrant
+    happens to be installed on the runner today.
+    """
+    lattice_result = next((r for r in results if r.name.startswith("Lattice")),
+                          None)
+    if lattice_result is None:
+        raise RuntimeError("no lattice result to write")
+
+    payload = {
+        "dataset": os.path.basename(os.path.dirname(path)) or "unknown",
+        "vectors": base_n,
+        "dim": dim,
+        "k": k,
+        "ef": ef,
+        "recall": round(lattice_result.recall, 4),
+        "p50_us": round(lattice_result.p50_us),
+        "p99_us": round(lattice_result.p99_us),
+        "build_seconds": round(lattice_result.build_seconds, 1),
+    }
+
+    with open(path, "w") as f:
+        json.dump(payload, f, indent=2)
+    print(f"wrote {path}")   
+
 
 def main():
     ap = argparse.ArgumentParser()
@@ -290,6 +320,8 @@ def main():
     ap.add_argument("--out", default="results.md")
     ap.add_argument("--skip", default="",
                     help="comma-separated: qdrant,chroma")
+    ap.add_argument("--json", default="", help="also write machine-readable "
+                                               "results for CI")
     args = ap.parse_args()
 
     base = read_fvecs(f"{args.data}/{args.prefix}_base.fvecs")
@@ -324,6 +356,10 @@ def main():
 
     print_table(results, args.k, len(base), base.shape[1])
     write_markdown(results, args.k, len(base), base.shape[1], args.out)
+
+    if args.json:
+        write_json(results, args.k, len(base), base.shape[1], args.ef,
+                   args.json)
 
 
 if __name__ == "__main__":

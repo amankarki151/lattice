@@ -1,0 +1,813 @@
+Start testing: Aug 31 14:48 IST
+----------------------------------------------------------
+1/30 Testing: WalTest.ReplayOnEmptyFileReturnsNothing
+1/30 Test: WalTest.ReplayOnEmptyFileReturnsNothing
+Command: "/Users/amankarki/Downloads/projects/lattice/build-cov/core/tests/lattice_tests" "--gtest_filter=WalTest.ReplayOnEmptyFileReturnsNothing" "--gtest_also_run_disabled_tests"
+Directory: /Users/amankarki/Downloads/projects/lattice/build-cov/core/tests
+"WalTest.ReplayOnEmptyFileReturnsNothing" start time: Aug 31 14:48 IST
+Output:
+----------------------------------------------------------
+Running main() from /Users/amankarki/Downloads/projects/lattice/build-cov/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = WalTest.ReplayOnEmptyFileReturnsNothing
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from WalTest
+[ RUN      ] WalTest.ReplayOnEmptyFileReturnsNothing
+[       OK ] WalTest.ReplayOnEmptyFileReturnsNothing (0 ms)
+[----------] 1 test from WalTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"WalTest.ReplayOnEmptyFileReturnsNothing" end time: Aug 31 14:48 IST
+"WalTest.ReplayOnEmptyFileReturnsNothing" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/30 Testing: WalTest.SingleRecordRoundTrips
+2/30 Test: WalTest.SingleRecordRoundTrips
+Command: "/Users/amankarki/Downloads/projects/lattice/build-cov/core/tests/lattice_tests" "--gtest_filter=WalTest.SingleRecordRoundTrips" "--gtest_also_run_disabled_tests"
+Directory: /Users/amankarki/Downloads/projects/lattice/build-cov/core/tests
+"WalTest.SingleRecordRoundTrips" start time: Aug 31 14:48 IST
+Output:
+----------------------------------------------------------
+Running main() from /Users/amankarki/Downloads/projects/lattice/build-cov/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = WalTest.SingleRecordRoundTrips
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from WalTest
+[ RUN      ] WalTest.SingleRecordRoundTrips
+[       OK ] WalTest.SingleRecordRoundTrips (0 ms)
+[----------] 1 test from WalTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"WalTest.SingleRecordRoundTrips" end time: Aug 31 14:48 IST
+"WalTest.SingleRecordRoundTrips" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/30 Testing: WalTest.ManyRecordsReplayInOrder
+3/30 Test: WalTest.ManyRecordsReplayInOrder
+Command: "/Users/amankarki/Downloads/projects/lattice/build-cov/core/tests/lattice_tests" "--gtest_filter=WalTest.ManyRecordsReplayInOrder" "--gtest_also_run_disabled_tests"
+Directory: /Users/amankarki/Downloads/projects/lattice/build-cov/core/tests
+"WalTest.ManyRecordsReplayInOrder" start time: Aug 31 14:48 IST
+Output:
+----------------------------------------------------------
+Running main() from /Users/amankarki/Downloads/projects/lattice/build-cov/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = WalTest.ManyRecordsReplayInOrder
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from WalTest
+[ RUN      ] WalTest.ManyRecordsReplayInOrder
+[       OK ] WalTest.ManyRecordsReplayInOrder (0 ms)
+[----------] 1 test from WalTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"WalTest.ManyRecordsReplayInOrder" end time: Aug 31 14:48 IST
+"WalTest.ManyRecordsReplayInOrder" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/30 Testing: WalTest.TornFinalRecordIsDroppedButEarlierOnesSurvive
+4/30 Test: WalTest.TornFinalRecordIsDroppedButEarlierOnesSurvive
+Command: "/Users/amankarki/Downloads/projects/lattice/build-cov/core/tests/lattice_tests" "--gtest_filter=WalTest.TornFinalRecordIsDroppedButEarlierOnesSurvive" "--gtest_also_run_disabled_tests"
+Directory: /Users/amankarki/Downloads/projects/lattice/build-cov/core/tests
+"WalTest.TornFinalRecordIsDroppedButEarlierOnesSurvive" start time: Aug 31 14:48 IST
+Output:
+----------------------------------------------------------
+Running main() from /Users/amankarki/Downloads/projects/lattice/build-cov/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = WalTest.TornFinalRecordIsDroppedButEarlierOnesSurvive
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from WalTest
+[ RUN      ] WalTest.TornFinalRecordIsDroppedButEarlierOnesSurvive
+[       OK ] WalTest.TornFinalRecordIsDroppedButEarlierOnesSurvive (0 ms)
+[----------] 1 test from WalTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"WalTest.TornFinalRecordIsDroppedButEarlierOnesSurvive" end time: Aug 31 14:48 IST
+"WalTest.TornFinalRecordIsDroppedButEarlierOnesSurvive" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/30 Testing: WalTest.AppendsRatherThanOverwrites
+5/30 Test: WalTest.AppendsRatherThanOverwrites
+Command: "/Users/amankarki/Downloads/projects/lattice/build-cov/core/tests/lattice_tests" "--gtest_filter=WalTest.AppendsRatherThanOverwrites" "--gtest_also_run_disabled_tests"
+Directory: /Users/amankarki/Downloads/projects/lattice/build-cov/core/tests
+"WalTest.AppendsRatherThanOverwrites" start time: Aug 31 14:48 IST
+Output:
+----------------------------------------------------------
+Running main() from /Users/amankarki/Downloads/projects/lattice/build-cov/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = WalTest.AppendsRatherThanOverwrites
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from WalTest
+[ RUN      ] WalTest.AppendsRatherThanOverwrites
+[       OK ] WalTest.AppendsRatherThanOverwrites (0 ms)
+[----------] 1 test from WalTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"WalTest.AppendsRatherThanOverwrites" end time: Aug 31 14:48 IST
+"WalTest.AppendsRatherThanOverwrites" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/30 Testing: SegmentTest.MissingFileIsNotAnError
+6/30 Test: SegmentTest.MissingFileIsNotAnError
+Command: "/Users/amankarki/Downloads/projects/lattice/build-cov/core/tests/lattice_tests" "--gtest_filter=SegmentTest.MissingFileIsNotAnError" "--gtest_also_run_disabled_tests"
+Directory: /Users/amankarki/Downloads/projects/lattice/build-cov/core/tests
+"SegmentTest.MissingFileIsNotAnError" start time: Aug 31 14:48 IST
+Output:
+----------------------------------------------------------
+Running main() from /Users/amankarki/Downloads/projects/lattice/build-cov/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = SegmentTest.MissingFileIsNotAnError
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from SegmentTest
+[ RUN      ] SegmentTest.MissingFileIsNotAnError
+[       OK ] SegmentTest.MissingFileIsNotAnError (0 ms)
+[----------] 1 test from SegmentTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"SegmentTest.MissingFileIsNotAnError" end time: Aug 31 14:48 IST
+"SegmentTest.MissingFileIsNotAnError" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/30 Testing: SegmentTest.RoundTripsAllRecords
+7/30 Test: SegmentTest.RoundTripsAllRecords
+Command: "/Users/amankarki/Downloads/projects/lattice/build-cov/core/tests/lattice_tests" "--gtest_filter=SegmentTest.RoundTripsAllRecords" "--gtest_also_run_disabled_tests"
+Directory: /Users/amankarki/Downloads/projects/lattice/build-cov/core/tests
+"SegmentTest.RoundTripsAllRecords" start time: Aug 31 14:48 IST
+Output:
+----------------------------------------------------------
+Running main() from /Users/amankarki/Downloads/projects/lattice/build-cov/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = SegmentTest.RoundTripsAllRecords
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from SegmentTest
+[ RUN      ] SegmentTest.RoundTripsAllRecords
+[       OK ] SegmentTest.RoundTripsAllRecords (0 ms)
+[----------] 1 test from SegmentTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"SegmentTest.RoundTripsAllRecords" end time: Aug 31 14:48 IST
+"SegmentTest.RoundTripsAllRecords" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/30 Testing: SegmentTest.CorruptMagicIsRejected
+8/30 Test: SegmentTest.CorruptMagicIsRejected
+Command: "/Users/amankarki/Downloads/projects/lattice/build-cov/core/tests/lattice_tests" "--gtest_filter=SegmentTest.CorruptMagicIsRejected" "--gtest_also_run_disabled_tests"
+Directory: /Users/amankarki/Downloads/projects/lattice/build-cov/core/tests
+"SegmentTest.CorruptMagicIsRejected" start time: Aug 31 14:48 IST
+Output:
+----------------------------------------------------------
+Running main() from /Users/amankarki/Downloads/projects/lattice/build-cov/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = SegmentTest.CorruptMagicIsRejected
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from SegmentTest
+[ RUN      ] SegmentTest.CorruptMagicIsRejected
+[       OK ] SegmentTest.CorruptMagicIsRejected (0 ms)
+[----------] 1 test from SegmentTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"SegmentTest.CorruptMagicIsRejected" end time: Aug 31 14:48 IST
+"SegmentTest.CorruptMagicIsRejected" time elapsed: 00:00:00
+----------------------------------------------------------
+
+9/30 Testing: SegmentTest.EmptySegmentIsValid
+9/30 Test: SegmentTest.EmptySegmentIsValid
+Command: "/Users/amankarki/Downloads/projects/lattice/build-cov/core/tests/lattice_tests" "--gtest_filter=SegmentTest.EmptySegmentIsValid" "--gtest_also_run_disabled_tests"
+Directory: /Users/amankarki/Downloads/projects/lattice/build-cov/core/tests
+"SegmentTest.EmptySegmentIsValid" start time: Aug 31 14:48 IST
+Output:
+----------------------------------------------------------
+Running main() from /Users/amankarki/Downloads/projects/lattice/build-cov/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = SegmentTest.EmptySegmentIsValid
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from SegmentTest
+[ RUN      ] SegmentTest.EmptySegmentIsValid
+[       OK ] SegmentTest.EmptySegmentIsValid (0 ms)
+[----------] 1 test from SegmentTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"SegmentTest.EmptySegmentIsValid" end time: Aug 31 14:48 IST
+"SegmentTest.EmptySegmentIsValid" time elapsed: 00:00:00
+----------------------------------------------------------
+
+10/30 Testing: DistanceTest.IdenticalVectorsAreZeroApart
+10/30 Test: DistanceTest.IdenticalVectorsAreZeroApart
+Command: "/Users/amankarki/Downloads/projects/lattice/build-cov/core/tests/lattice_tests" "--gtest_filter=DistanceTest.IdenticalVectorsAreZeroApart" "--gtest_also_run_disabled_tests"
+Directory: /Users/amankarki/Downloads/projects/lattice/build-cov/core/tests
+"DistanceTest.IdenticalVectorsAreZeroApart" start time: Aug 31 14:48 IST
+Output:
+----------------------------------------------------------
+Running main() from /Users/amankarki/Downloads/projects/lattice/build-cov/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = DistanceTest.IdenticalVectorsAreZeroApart
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from DistanceTest
+[ RUN      ] DistanceTest.IdenticalVectorsAreZeroApart
+[       OK ] DistanceTest.IdenticalVectorsAreZeroApart (0 ms)
+[----------] 1 test from DistanceTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"DistanceTest.IdenticalVectorsAreZeroApart" end time: Aug 31 14:48 IST
+"DistanceTest.IdenticalVectorsAreZeroApart" time elapsed: 00:00:00
+----------------------------------------------------------
+
+11/30 Testing: DistanceTest.MatchesHandCalculation
+11/30 Test: DistanceTest.MatchesHandCalculation
+Command: "/Users/amankarki/Downloads/projects/lattice/build-cov/core/tests/lattice_tests" "--gtest_filter=DistanceTest.MatchesHandCalculation" "--gtest_also_run_disabled_tests"
+Directory: /Users/amankarki/Downloads/projects/lattice/build-cov/core/tests
+"DistanceTest.MatchesHandCalculation" start time: Aug 31 14:48 IST
+Output:
+----------------------------------------------------------
+Running main() from /Users/amankarki/Downloads/projects/lattice/build-cov/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = DistanceTest.MatchesHandCalculation
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from DistanceTest
+[ RUN      ] DistanceTest.MatchesHandCalculation
+[       OK ] DistanceTest.MatchesHandCalculation (0 ms)
+[----------] 1 test from DistanceTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"DistanceTest.MatchesHandCalculation" end time: Aug 31 14:48 IST
+"DistanceTest.MatchesHandCalculation" time elapsed: 00:00:00
+----------------------------------------------------------
+
+12/30 Testing: BruteForceTest.EmptyCollectionReturnsNothing
+12/30 Test: BruteForceTest.EmptyCollectionReturnsNothing
+Command: "/Users/amankarki/Downloads/projects/lattice/build-cov/core/tests/lattice_tests" "--gtest_filter=BruteForceTest.EmptyCollectionReturnsNothing" "--gtest_also_run_disabled_tests"
+Directory: /Users/amankarki/Downloads/projects/lattice/build-cov/core/tests
+"BruteForceTest.EmptyCollectionReturnsNothing" start time: Aug 31 14:48 IST
+Output:
+----------------------------------------------------------
+Running main() from /Users/amankarki/Downloads/projects/lattice/build-cov/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = BruteForceTest.EmptyCollectionReturnsNothing
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BruteForceTest
+[ RUN      ] BruteForceTest.EmptyCollectionReturnsNothing
+[       OK ] BruteForceTest.EmptyCollectionReturnsNothing (0 ms)
+[----------] 1 test from BruteForceTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"BruteForceTest.EmptyCollectionReturnsNothing" end time: Aug 31 14:48 IST
+"BruteForceTest.EmptyCollectionReturnsNothing" time elapsed: 00:00:00
+----------------------------------------------------------
+
+13/30 Testing: BruteForceTest.SelfMatchComesBackFirstAtZero
+13/30 Test: BruteForceTest.SelfMatchComesBackFirstAtZero
+Command: "/Users/amankarki/Downloads/projects/lattice/build-cov/core/tests/lattice_tests" "--gtest_filter=BruteForceTest.SelfMatchComesBackFirstAtZero" "--gtest_also_run_disabled_tests"
+Directory: /Users/amankarki/Downloads/projects/lattice/build-cov/core/tests
+"BruteForceTest.SelfMatchComesBackFirstAtZero" start time: Aug 31 14:48 IST
+Output:
+----------------------------------------------------------
+Running main() from /Users/amankarki/Downloads/projects/lattice/build-cov/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = BruteForceTest.SelfMatchComesBackFirstAtZero
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BruteForceTest
+[ RUN      ] BruteForceTest.SelfMatchComesBackFirstAtZero
+[       OK ] BruteForceTest.SelfMatchComesBackFirstAtZero (0 ms)
+[----------] 1 test from BruteForceTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"BruteForceTest.SelfMatchComesBackFirstAtZero" end time: Aug 31 14:48 IST
+"BruteForceTest.SelfMatchComesBackFirstAtZero" time elapsed: 00:00:00
+----------------------------------------------------------
+
+14/30 Testing: BruteForceTest.ResultsAreSortedNearestFirst
+14/30 Test: BruteForceTest.ResultsAreSortedNearestFirst
+Command: "/Users/amankarki/Downloads/projects/lattice/build-cov/core/tests/lattice_tests" "--gtest_filter=BruteForceTest.ResultsAreSortedNearestFirst" "--gtest_also_run_disabled_tests"
+Directory: /Users/amankarki/Downloads/projects/lattice/build-cov/core/tests
+"BruteForceTest.ResultsAreSortedNearestFirst" start time: Aug 31 14:48 IST
+Output:
+----------------------------------------------------------
+Running main() from /Users/amankarki/Downloads/projects/lattice/build-cov/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = BruteForceTest.ResultsAreSortedNearestFirst
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BruteForceTest
+[ RUN      ] BruteForceTest.ResultsAreSortedNearestFirst
+[       OK ] BruteForceTest.ResultsAreSortedNearestFirst (0 ms)
+[----------] 1 test from BruteForceTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"BruteForceTest.ResultsAreSortedNearestFirst" end time: Aug 31 14:48 IST
+"BruteForceTest.ResultsAreSortedNearestFirst" time elapsed: 00:00:00
+----------------------------------------------------------
+
+15/30 Testing: BruteForceTest.RespectsK
+15/30 Test: BruteForceTest.RespectsK
+Command: "/Users/amankarki/Downloads/projects/lattice/build-cov/core/tests/lattice_tests" "--gtest_filter=BruteForceTest.RespectsK" "--gtest_also_run_disabled_tests"
+Directory: /Users/amankarki/Downloads/projects/lattice/build-cov/core/tests
+"BruteForceTest.RespectsK" start time: Aug 31 14:48 IST
+Output:
+----------------------------------------------------------
+Running main() from /Users/amankarki/Downloads/projects/lattice/build-cov/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = BruteForceTest.RespectsK
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BruteForceTest
+[ RUN      ] BruteForceTest.RespectsK
+[       OK ] BruteForceTest.RespectsK (0 ms)
+[----------] 1 test from BruteForceTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"BruteForceTest.RespectsK" end time: Aug 31 14:48 IST
+"BruteForceTest.RespectsK" time elapsed: 00:00:00
+----------------------------------------------------------
+
+16/30 Testing: BruteForceTest.MismatchedDimensionsAreSkipped
+16/30 Test: BruteForceTest.MismatchedDimensionsAreSkipped
+Command: "/Users/amankarki/Downloads/projects/lattice/build-cov/core/tests/lattice_tests" "--gtest_filter=BruteForceTest.MismatchedDimensionsAreSkipped" "--gtest_also_run_disabled_tests"
+Directory: /Users/amankarki/Downloads/projects/lattice/build-cov/core/tests
+"BruteForceTest.MismatchedDimensionsAreSkipped" start time: Aug 31 14:48 IST
+Output:
+----------------------------------------------------------
+Running main() from /Users/amankarki/Downloads/projects/lattice/build-cov/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = BruteForceTest.MismatchedDimensionsAreSkipped
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BruteForceTest
+[ RUN      ] BruteForceTest.MismatchedDimensionsAreSkipped
+[       OK ] BruteForceTest.MismatchedDimensionsAreSkipped (0 ms)
+[----------] 1 test from BruteForceTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"BruteForceTest.MismatchedDimensionsAreSkipped" end time: Aug 31 14:48 IST
+"BruteForceTest.MismatchedDimensionsAreSkipped" time elapsed: 00:00:00
+----------------------------------------------------------
+
+17/30 Testing: HnswTest.EmptyIndexReturnsNothing
+17/30 Test: HnswTest.EmptyIndexReturnsNothing
+Command: "/Users/amankarki/Downloads/projects/lattice/build-cov/core/tests/lattice_tests" "--gtest_filter=HnswTest.EmptyIndexReturnsNothing" "--gtest_also_run_disabled_tests"
+Directory: /Users/amankarki/Downloads/projects/lattice/build-cov/core/tests
+"HnswTest.EmptyIndexReturnsNothing" start time: Aug 31 14:48 IST
+Output:
+----------------------------------------------------------
+Running main() from /Users/amankarki/Downloads/projects/lattice/build-cov/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = HnswTest.EmptyIndexReturnsNothing
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from HnswTest
+[ RUN      ] HnswTest.EmptyIndexReturnsNothing
+[       OK ] HnswTest.EmptyIndexReturnsNothing (0 ms)
+[----------] 1 test from HnswTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"HnswTest.EmptyIndexReturnsNothing" end time: Aug 31 14:48 IST
+"HnswTest.EmptyIndexReturnsNothing" time elapsed: 00:00:00
+----------------------------------------------------------
+
+18/30 Testing: HnswTest.SingleVectorIsFound
+18/30 Test: HnswTest.SingleVectorIsFound
+Command: "/Users/amankarki/Downloads/projects/lattice/build-cov/core/tests/lattice_tests" "--gtest_filter=HnswTest.SingleVectorIsFound" "--gtest_also_run_disabled_tests"
+Directory: /Users/amankarki/Downloads/projects/lattice/build-cov/core/tests
+"HnswTest.SingleVectorIsFound" start time: Aug 31 14:48 IST
+Output:
+----------------------------------------------------------
+Running main() from /Users/amankarki/Downloads/projects/lattice/build-cov/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = HnswTest.SingleVectorIsFound
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from HnswTest
+[ RUN      ] HnswTest.SingleVectorIsFound
+[       OK ] HnswTest.SingleVectorIsFound (0 ms)
+[----------] 1 test from HnswTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"HnswTest.SingleVectorIsFound" end time: Aug 31 14:48 IST
+"HnswTest.SingleVectorIsFound" time elapsed: 00:00:00
+----------------------------------------------------------
+
+19/30 Testing: HnswTest.SelfMatchAlwaysSucceeds
+19/30 Test: HnswTest.SelfMatchAlwaysSucceeds
+Command: "/Users/amankarki/Downloads/projects/lattice/build-cov/core/tests/lattice_tests" "--gtest_filter=HnswTest.SelfMatchAlwaysSucceeds" "--gtest_also_run_disabled_tests"
+Directory: /Users/amankarki/Downloads/projects/lattice/build-cov/core/tests
+"HnswTest.SelfMatchAlwaysSucceeds" start time: Aug 31 14:48 IST
+Output:
+----------------------------------------------------------
+Running main() from /Users/amankarki/Downloads/projects/lattice/build-cov/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = HnswTest.SelfMatchAlwaysSucceeds
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from HnswTest
+[ RUN      ] HnswTest.SelfMatchAlwaysSucceeds
+[       OK ] HnswTest.SelfMatchAlwaysSucceeds (791 ms)
+[----------] 1 test from HnswTest (791 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (791 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.80 sec
+----------------------------------------------------------
+Test Passed.
+"HnswTest.SelfMatchAlwaysSucceeds" end time: Aug 31 14:48 IST
+"HnswTest.SelfMatchAlwaysSucceeds" time elapsed: 00:00:00
+----------------------------------------------------------
+
+20/30 Testing: HnswTest.NoIsolatedNodesAtLayerZero
+20/30 Test: HnswTest.NoIsolatedNodesAtLayerZero
+Command: "/Users/amankarki/Downloads/projects/lattice/build-cov/core/tests/lattice_tests" "--gtest_filter=HnswTest.NoIsolatedNodesAtLayerZero" "--gtest_also_run_disabled_tests"
+Directory: /Users/amankarki/Downloads/projects/lattice/build-cov/core/tests
+"HnswTest.NoIsolatedNodesAtLayerZero" start time: Aug 31 14:48 IST
+Output:
+----------------------------------------------------------
+Running main() from /Users/amankarki/Downloads/projects/lattice/build-cov/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = HnswTest.NoIsolatedNodesAtLayerZero
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from HnswTest
+[ RUN      ] HnswTest.NoIsolatedNodesAtLayerZero
+[       OK ] HnswTest.NoIsolatedNodesAtLayerZero (320 ms)
+[----------] 1 test from HnswTest (320 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (320 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.33 sec
+----------------------------------------------------------
+Test Passed.
+"HnswTest.NoIsolatedNodesAtLayerZero" end time: Aug 31 14:48 IST
+"HnswTest.NoIsolatedNodesAtLayerZero" time elapsed: 00:00:00
+----------------------------------------------------------
+
+21/30 Testing: HnswTest.GraphIsFullyReachableAtLayerZero
+21/30 Test: HnswTest.GraphIsFullyReachableAtLayerZero
+Command: "/Users/amankarki/Downloads/projects/lattice/build-cov/core/tests/lattice_tests" "--gtest_filter=HnswTest.GraphIsFullyReachableAtLayerZero" "--gtest_also_run_disabled_tests"
+Directory: /Users/amankarki/Downloads/projects/lattice/build-cov/core/tests
+"HnswTest.GraphIsFullyReachableAtLayerZero" start time: Aug 31 14:48 IST
+Output:
+----------------------------------------------------------
+Running main() from /Users/amankarki/Downloads/projects/lattice/build-cov/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = HnswTest.GraphIsFullyReachableAtLayerZero
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from HnswTest
+[ RUN      ] HnswTest.GraphIsFullyReachableAtLayerZero
+[       OK ] HnswTest.GraphIsFullyReachableAtLayerZero (320 ms)
+[----------] 1 test from HnswTest (320 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (320 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.33 sec
+----------------------------------------------------------
+Test Passed.
+"HnswTest.GraphIsFullyReachableAtLayerZero" end time: Aug 31 14:48 IST
+"HnswTest.GraphIsFullyReachableAtLayerZero" time elapsed: 00:00:00
+----------------------------------------------------------
+
+22/30 Testing: HnswTest.RecallAgainstBruteForceIsHigh
+22/30 Test: HnswTest.RecallAgainstBruteForceIsHigh
+Command: "/Users/amankarki/Downloads/projects/lattice/build-cov/core/tests/lattice_tests" "--gtest_filter=HnswTest.RecallAgainstBruteForceIsHigh" "--gtest_also_run_disabled_tests"
+Directory: /Users/amankarki/Downloads/projects/lattice/build-cov/core/tests
+"HnswTest.RecallAgainstBruteForceIsHigh" start time: Aug 31 14:48 IST
+Output:
+----------------------------------------------------------
+Running main() from /Users/amankarki/Downloads/projects/lattice/build-cov/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = HnswTest.RecallAgainstBruteForceIsHigh
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from HnswTest
+[ RUN      ] HnswTest.RecallAgainstBruteForceIsHigh
+[       OK ] HnswTest.RecallAgainstBruteForceIsHigh (1894 ms)
+[----------] 1 test from HnswTest (1894 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1894 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   1.90 sec
+----------------------------------------------------------
+Test Passed.
+"HnswTest.RecallAgainstBruteForceIsHigh" end time: Aug 31 14:48 IST
+"HnswTest.RecallAgainstBruteForceIsHigh" time elapsed: 00:00:01
+----------------------------------------------------------
+
+23/30 Testing: HnswTest.EfIsRaisedToKWhenTooSmall
+23/30 Test: HnswTest.EfIsRaisedToKWhenTooSmall
+Command: "/Users/amankarki/Downloads/projects/lattice/build-cov/core/tests/lattice_tests" "--gtest_filter=HnswTest.EfIsRaisedToKWhenTooSmall" "--gtest_also_run_disabled_tests"
+Directory: /Users/amankarki/Downloads/projects/lattice/build-cov/core/tests
+"HnswTest.EfIsRaisedToKWhenTooSmall" start time: Aug 31 14:48 IST
+Output:
+----------------------------------------------------------
+Running main() from /Users/amankarki/Downloads/projects/lattice/build-cov/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = HnswTest.EfIsRaisedToKWhenTooSmall
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from HnswTest
+[ RUN      ] HnswTest.EfIsRaisedToKWhenTooSmall
+[       OK ] HnswTest.EfIsRaisedToKWhenTooSmall (88 ms)
+[----------] 1 test from HnswTest (88 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (88 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.10 sec
+----------------------------------------------------------
+Test Passed.
+"HnswTest.EfIsRaisedToKWhenTooSmall" end time: Aug 31 14:48 IST
+"HnswTest.EfIsRaisedToKWhenTooSmall" time elapsed: 00:00:00
+----------------------------------------------------------
+
+24/30 Testing: QuantizerTest.EncodeBeforeTrainThrows
+24/30 Test: QuantizerTest.EncodeBeforeTrainThrows
+Command: "/Users/amankarki/Downloads/projects/lattice/build-cov/core/tests/lattice_tests" "--gtest_filter=QuantizerTest.EncodeBeforeTrainThrows" "--gtest_also_run_disabled_tests"
+Directory: /Users/amankarki/Downloads/projects/lattice/build-cov/core/tests
+"QuantizerTest.EncodeBeforeTrainThrows" start time: Aug 31 14:48 IST
+Output:
+----------------------------------------------------------
+Running main() from /Users/amankarki/Downloads/projects/lattice/build-cov/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = QuantizerTest.EncodeBeforeTrainThrows
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from QuantizerTest
+[ RUN      ] QuantizerTest.EncodeBeforeTrainThrows
+[       OK ] QuantizerTest.EncodeBeforeTrainThrows (0 ms)
+[----------] 1 test from QuantizerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"QuantizerTest.EncodeBeforeTrainThrows" end time: Aug 31 14:48 IST
+"QuantizerTest.EncodeBeforeTrainThrows" time elapsed: 00:00:00
+----------------------------------------------------------
+
+25/30 Testing: QuantizerTest.TrainOnEmptySampleThrows
+25/30 Test: QuantizerTest.TrainOnEmptySampleThrows
+Command: "/Users/amankarki/Downloads/projects/lattice/build-cov/core/tests/lattice_tests" "--gtest_filter=QuantizerTest.TrainOnEmptySampleThrows" "--gtest_also_run_disabled_tests"
+Directory: /Users/amankarki/Downloads/projects/lattice/build-cov/core/tests
+"QuantizerTest.TrainOnEmptySampleThrows" start time: Aug 31 14:48 IST
+Output:
+----------------------------------------------------------
+Running main() from /Users/amankarki/Downloads/projects/lattice/build-cov/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = QuantizerTest.TrainOnEmptySampleThrows
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from QuantizerTest
+[ RUN      ] QuantizerTest.TrainOnEmptySampleThrows
+[       OK ] QuantizerTest.TrainOnEmptySampleThrows (0 ms)
+[----------] 1 test from QuantizerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"QuantizerTest.TrainOnEmptySampleThrows" end time: Aug 31 14:48 IST
+"QuantizerTest.TrainOnEmptySampleThrows" time elapsed: 00:00:00
+----------------------------------------------------------
+
+26/30 Testing: QuantizerTest.OneByteBerDimension
+26/30 Test: QuantizerTest.OneByteBerDimension
+Command: "/Users/amankarki/Downloads/projects/lattice/build-cov/core/tests/lattice_tests" "--gtest_filter=QuantizerTest.OneByteBerDimension" "--gtest_also_run_disabled_tests"
+Directory: /Users/amankarki/Downloads/projects/lattice/build-cov/core/tests
+"QuantizerTest.OneByteBerDimension" start time: Aug 31 14:48 IST
+Output:
+----------------------------------------------------------
+Running main() from /Users/amankarki/Downloads/projects/lattice/build-cov/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = QuantizerTest.OneByteBerDimension
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from QuantizerTest
+[ RUN      ] QuantizerTest.OneByteBerDimension
+[       OK ] QuantizerTest.OneByteBerDimension (0 ms)
+[----------] 1 test from QuantizerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"QuantizerTest.OneByteBerDimension" end time: Aug 31 14:48 IST
+"QuantizerTest.OneByteBerDimension" time elapsed: 00:00:00
+----------------------------------------------------------
+
+27/30 Testing: QuantizerTest.ErrorStaysWithinTheoreticalBound
+27/30 Test: QuantizerTest.ErrorStaysWithinTheoreticalBound
+Command: "/Users/amankarki/Downloads/projects/lattice/build-cov/core/tests/lattice_tests" "--gtest_filter=QuantizerTest.ErrorStaysWithinTheoreticalBound" "--gtest_also_run_disabled_tests"
+Directory: /Users/amankarki/Downloads/projects/lattice/build-cov/core/tests
+"QuantizerTest.ErrorStaysWithinTheoreticalBound" start time: Aug 31 14:48 IST
+Output:
+----------------------------------------------------------
+Running main() from /Users/amankarki/Downloads/projects/lattice/build-cov/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = QuantizerTest.ErrorStaysWithinTheoreticalBound
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from QuantizerTest
+[ RUN      ] QuantizerTest.ErrorStaysWithinTheoreticalBound
+[       OK ] QuantizerTest.ErrorStaysWithinTheoreticalBound (2 ms)
+[----------] 1 test from QuantizerTest (2 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (2 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"QuantizerTest.ErrorStaysWithinTheoreticalBound" end time: Aug 31 14:48 IST
+"QuantizerTest.ErrorStaysWithinTheoreticalBound" time elapsed: 00:00:00
+----------------------------------------------------------
+
+28/30 Testing: QuantizerTest.ValuesOutsideTrainedRangeAreClamped
+28/30 Test: QuantizerTest.ValuesOutsideTrainedRangeAreClamped
+Command: "/Users/amankarki/Downloads/projects/lattice/build-cov/core/tests/lattice_tests" "--gtest_filter=QuantizerTest.ValuesOutsideTrainedRangeAreClamped" "--gtest_also_run_disabled_tests"
+Directory: /Users/amankarki/Downloads/projects/lattice/build-cov/core/tests
+"QuantizerTest.ValuesOutsideTrainedRangeAreClamped" start time: Aug 31 14:48 IST
+Output:
+----------------------------------------------------------
+Running main() from /Users/amankarki/Downloads/projects/lattice/build-cov/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = QuantizerTest.ValuesOutsideTrainedRangeAreClamped
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from QuantizerTest
+[ RUN      ] QuantizerTest.ValuesOutsideTrainedRangeAreClamped
+[       OK ] QuantizerTest.ValuesOutsideTrainedRangeAreClamped (0 ms)
+[----------] 1 test from QuantizerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"QuantizerTest.ValuesOutsideTrainedRangeAreClamped" end time: Aug 31 14:48 IST
+"QuantizerTest.ValuesOutsideTrainedRangeAreClamped" time elapsed: 00:00:00
+----------------------------------------------------------
+
+29/30 Testing: QuantizerTest.DistanceToQueryMatchesDecodeThenCompute
+29/30 Test: QuantizerTest.DistanceToQueryMatchesDecodeThenCompute
+Command: "/Users/amankarki/Downloads/projects/lattice/build-cov/core/tests/lattice_tests" "--gtest_filter=QuantizerTest.DistanceToQueryMatchesDecodeThenCompute" "--gtest_also_run_disabled_tests"
+Directory: /Users/amankarki/Downloads/projects/lattice/build-cov/core/tests
+"QuantizerTest.DistanceToQueryMatchesDecodeThenCompute" start time: Aug 31 14:48 IST
+Output:
+----------------------------------------------------------
+Running main() from /Users/amankarki/Downloads/projects/lattice/build-cov/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = QuantizerTest.DistanceToQueryMatchesDecodeThenCompute
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from QuantizerTest
+[ RUN      ] QuantizerTest.DistanceToQueryMatchesDecodeThenCompute
+[       OK ] QuantizerTest.DistanceToQueryMatchesDecodeThenCompute (0 ms)
+[----------] 1 test from QuantizerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"QuantizerTest.DistanceToQueryMatchesDecodeThenCompute" end time: Aug 31 14:48 IST
+"QuantizerTest.DistanceToQueryMatchesDecodeThenCompute" time elapsed: 00:00:00
+----------------------------------------------------------
+
+30/30 Testing: QuantizerTest.ZeroRangeDimensionDoesNotDivideByZero
+30/30 Test: QuantizerTest.ZeroRangeDimensionDoesNotDivideByZero
+Command: "/Users/amankarki/Downloads/projects/lattice/build-cov/core/tests/lattice_tests" "--gtest_filter=QuantizerTest.ZeroRangeDimensionDoesNotDivideByZero" "--gtest_also_run_disabled_tests"
+Directory: /Users/amankarki/Downloads/projects/lattice/build-cov/core/tests
+"QuantizerTest.ZeroRangeDimensionDoesNotDivideByZero" start time: Aug 31 14:48 IST
+Output:
+----------------------------------------------------------
+Running main() from /Users/amankarki/Downloads/projects/lattice/build-cov/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = QuantizerTest.ZeroRangeDimensionDoesNotDivideByZero
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from QuantizerTest
+[ RUN      ] QuantizerTest.ZeroRangeDimensionDoesNotDivideByZero
+[       OK ] QuantizerTest.ZeroRangeDimensionDoesNotDivideByZero (0 ms)
+[----------] 1 test from QuantizerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"QuantizerTest.ZeroRangeDimensionDoesNotDivideByZero" end time: Aug 31 14:48 IST
+"QuantizerTest.ZeroRangeDimensionDoesNotDivideByZero" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Aug 31 14:48 IST

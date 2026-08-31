@@ -1,0 +1,14 @@
+{
+	"InstallScripts" : 
+	[
+		"/Users/amankarki/Downloads/projects/lattice/build-cov/cmake_install.cmake",
+		"/Users/amankarki/Downloads/projects/lattice/build-cov/core/cmake_install.cmake",
+		"/Users/amankarki/Downloads/projects/lattice/build-cov/core/tests/cmake_install.cmake",
+		"/Users/amankarki/Downloads/projects/lattice/build-cov/_deps/googletest-build/cmake_install.cmake",
+		"/Users/amankarki/Downloads/projects/lattice/build-cov/_deps/googletest-build/googlemock/cmake_install.cmake",
+		"/Users/amankarki/Downloads/projects/lattice/build-cov/_deps/googletest-build/googletest/cmake_install.cmake",
+		"/Users/amankarki/Downloads/projects/lattice/build-cov/cli/cmake_install.cmake",
+		"/Users/amankarki/Downloads/projects/lattice/build-cov/bindings/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
