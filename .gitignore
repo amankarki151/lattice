@@ -33,3 +33,6 @@ notes.md
 
 # benchmark datasets - large, downloadable, not ours to redistribute
 bench/data/
+
+app/.venv/
+app/data/
