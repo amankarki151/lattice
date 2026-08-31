@@ -1,5 +1,7 @@
 # Lattice
 
+[![CI](https://github.com/amankarki151/lattice/actions/workflows/ci.yml/badge.svg)](https://github.com/amankarki151/lattice/actions/workflows/ci.yml)
+
 An embedded vector database, written from scratch in C++.
 
 Most vector databases are services you run. Lattice is a library you link
