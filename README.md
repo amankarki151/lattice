@@ -68,7 +68,8 @@ Full methodology and raw output in [bench/results.md](bench/results.md).
 
 ## Status
 
-Storage, search, indexing, quantization, and concurrency all work:
+Storage, search, indexing, quantization, concurrency, interfaces,
+CI, and a working document assistant:
 
 - Append-only write-ahead log with replay
 - Memory-mapped segment files for settled data
@@ -81,9 +82,15 @@ Storage, search, indexing, quantization, and concurrency all work:
   and speed cost measured rather than assumed
 - Concurrent query path: many readers alongside a single writer,
   verified clean under the thread sanitizer
+- Python bindings via pybind11, with the GIL released around calls
+- A FastAPI HTTP server wrapping the bindings
+- GoogleTest suite: 30 tests covering storage, search, indexing, and
+  quantization
+- CI that runs the tests and fails the build on a benchmark regression
+- A local-first document assistant: ingest a folder of notes or PDFs,
+  search them by meaning, entirely offline
 
-Next: Python bindings and an HTTP server, then benchmarking against
-Qdrant and Chroma.
+Next: a multi-step agent loop and a GUI on top of the assistant.
 
 ## Writing
 
