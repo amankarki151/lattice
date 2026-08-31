@@ -12,6 +12,14 @@ add_library(lattice_core
 
 target_include_directories(lattice_core PUBLIC include)
 
+target_include_directories(lattice_core PUBLIC include)
+
+# Needed because this static lib gets linked into the Python module,
+# which is a shared object. Without PIC the link fails on Linux.
+# (macOS/Clang defaults to PIC, which is why this gap went unnoticed
+# locally until Linux CI caught it.)
+set_target_properties(lattice_core PROPERTIES POSITION_INDEPENDENT_CODE ON)
+
 find_package(Threads REQUIRED)
 target_link_libraries(lattice_core PUBLIC Threads::Threads)
 
