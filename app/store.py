@@ -15,6 +15,8 @@ import os
 import sys
 from dataclasses import asdict, dataclass
 from typing import Dict, List, Optional, Tuple
+from reranker import Reranker
+from synthesizer import Answer, Citation, Synthesizer
 
 import numpy as np
 
@@ -53,6 +55,8 @@ class DocumentStore:
         self.sidecar_path = os.path.join(db_dir, "chunks.json")
         self.db = lattice.Database(db_dir)
         self.embedder: Optional[Embedder] = None
+        self.reranker: Optional[Reranker] = None
+        self.synthesizer: Optional[Synthesizer] = None
 
         self.chunks: Dict[int, StoredChunk] = {}
         self._load_sidecar()
@@ -79,6 +83,14 @@ class DocumentStore:
     def _ensure_embedder(self):
         if self.embedder is None:
             self.embedder = Embedder()
+
+    def _ensure_reranker(self):
+        if self.reranker is None:
+            self.reranker = Reranker()
+
+    def _ensure_synthesizer(self):
+        if self.synthesizer is None:
+            self.synthesizer = Synthesizer()
 
     def ingest_directory(self, directory: str) -> int:
         """Chunk, embed, and store everything in a directory."""
@@ -135,8 +147,46 @@ class DocumentStore:
                 # drift out of sync.
                 continue
             results.append((chunk, h.distance))
-
         return results
+
+    def ask(self, question: str, retrieve_k: int = 15,
+            rerank_k: int = 4) -> Answer:
+        """Full pipeline: retrieve, re-rank, synthesize, cite.
+
+        Retrieves wide and re-ranks narrow on purpose. Vector distance
+        answers "is this about the same topic"; the cross-encoder
+        answers "does this actually address the question". Those are
+        different questions, and the second one is worth asking over a
+        shortlist even though it's too slow to ask over everything.
+        """
+        hits = self.search(question, k=retrieve_k)
+        if not hits:
+            return Answer(
+                text="Nothing has been ingested yet, so there's "
+                     "nothing to search.",
+                citations=[],
+            )
+
+        chunks = [c for c, _dist in hits]
+        passages = [c.text for c in chunks]
+
+        # Re-rank - slower, more accurate, only over the shortlist.
+        self._ensure_reranker()
+        ranked = self.reranker.rerank(question, passages, top_k=rerank_k)
+
+        kept_chunks = [chunks[i] for i, _score in ranked]
+        kept_passages = [passages[i] for i, _score in ranked]
+
+        citations = [
+            Citation(source=c.source, chunk_index=c.index, text=c.text)
+            for c in kept_chunks
+        ]
+
+        # Synthesize an answer, carrying its sources with it.
+        self._ensure_synthesizer()
+        return self.synthesizer.synthesize(
+            question, kept_passages, citations
+        )
 
     def stats(self) -> dict:
         sources = {c.source for c in self.chunks.values()}

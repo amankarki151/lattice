@@ -43,6 +43,21 @@ def cmd_stats():
     print(f"files:   {s['files']}")
     print(f"vectors: {s['vectors_in_db']}")
 
+def cmd_ask(question: str):
+    store = DocumentStore(DB_DIR)
+    answer = store.ask(question)
+
+    print(f'\nQ: {question}\n')
+    print(f'A: {answer.text}\n')
+
+    if answer.citations:
+        print("sources:")
+        for c in answer.citations:
+            snippet = c.text.replace("\n", " ")
+            if len(snippet) > 120:
+                snippet = snippet[:120] + "..."
+            print(f"  [{c.source} chunk {c.chunk_index}]")
+            print(f"    {snippet}")
 
 def main():
     if len(sys.argv) < 2:
@@ -63,6 +78,12 @@ def main():
             return 1
         k = int(sys.argv[3]) if len(sys.argv) > 3 else 5
         cmd_search(sys.argv[2], k)
+
+    elif cmd == "ask":
+        if len(sys.argv) < 3:
+            print("ask needs a question")
+            return 1
+        cmd_ask(sys.argv[2])
 
     elif cmd == "stats":
         cmd_stats()
