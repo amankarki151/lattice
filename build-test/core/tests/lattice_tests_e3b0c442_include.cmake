@@ -1,5 +1,0 @@
-if(EXISTS "/Users/amankarki/Downloads/projects/lattice/build-test/core/tests/lattice_tests_e3b0c442_tests.cmake")
-  include("/Users/amankarki/Downloads/projects/lattice/build-test/core/tests/lattice_tests_e3b0c442_tests.cmake")
-else()
-  add_test(lattice_tests_NOT_BUILT lattice_tests_NOT_BUILT)
-endif()
