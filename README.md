@@ -1,6 +1,8 @@
 # Lattice
 
 [![CI](https://github.com/amankarki151/lattice/actions/workflows/ci.yml/badge.svg)](https://github.com/amankarki151/lattice/actions/workflows/ci.yml)
+[![PyPI](https://img.shields.io/pypi/v/pylattice-db.svg)](https://pypi.org/project/pylattice-db/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 An embedded vector database, written from scratch in C++ — a
 hand-implemented HNSW index, a disk-backed storage engine with
@@ -14,6 +16,64 @@ On SIFT (10,000 vectors, 128 dimensions, k=10), Lattice answers
 queries in **583µs at 95.4% recall** — about 3.5x faster than Qdrant's
 in-memory mode on the same data. Full numbers, including where it
 loses, are below.
+
+## Contents
+
+- [Installing](#installing)
+- [Usage](#usage)
+- [Benchmarks](#benchmarks)
+- [Document assistant](#document-assistant)
+- [Building from source](#building-from-source)
+- [Repository layout](#repository-layout)
+- [Status](#status)
+- [Known limitations](#known-limitations)
+- [Writing](#writing)
+- [License](#license)
+
+## Installing
+
+```bash
+pip install pylattice-db
+```
+
+Or [build from source](#building-from-source) if you want the CLI,
+the test suite, or you're on a platform without a prebuilt wheel.
+
+## Usage
+
+### Python
+
+```python
+import lattice
+
+db = lattice.Database("/path/to/db")
+db.insert(lattice.Vector(1, [1.0, 0.0, 0.0]))
+db.insert(lattice.Vector(2, [0.0, 1.0, 0.0]))
+
+hits = db.search([1.0, 0.0, 0.0], k=5)
+for h in hits:
+    print(h.id, h.distance)
+```
+
+### Command line (built from source)
+
+```bash
+lattice /path/to/db insert 1 1.0,0.0,0.0
+lattice /path/to/db query 1.0,0.0,0.0 5
+lattice /path/to/db checkpoint
+lattice /path/to/db stats
+```
+
+### HTTP
+
+```bash
+cd server
+python3 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+uvicorn main:app --port 8000
+```
+
+Interactive API docs at `http://localhost:8000/docs`.
 
 ## Benchmarks
 
@@ -38,41 +98,6 @@ second for both competitors). The gap is partly architectural —
 Lattice inserts one vector at a time through an exclusive lock, with
 no batch-insert path yet — and partly a benchmark-harness limitation,
 since Qdrant and Chroma are both inserted here via their bulk APIs.
-
-## Building
-
-Requires CMake 3.20+, a C++20 compiler, and Python 3.10+.
-
-```bash
-git clone https://github.com/amankarki151/lattice.git
-cd lattice
-
-pip install pybind11
-cmake -B build -Dpybind11_DIR=$(python -m pybind11 --cmakedir)
-cmake --build build
-```
-
-To build and run the test suite:
-
-```bash
-cmake -B build-test -DLATTICE_BUILD_TESTS=ON \
-  -Dpybind11_DIR=$(python -m pybind11 --cmakedir)
-cmake --build build-test
-cd build-test && ctest --output-on-failure
-```
-
-## Repository layout
-
-```
-core/        the database itself - storage, index, search
-core/tests/  30 tests covering storage, search, indexing, quantization
-cli/         command-line tool
-bindings/    pybind11 Python module
-server/      FastAPI HTTP wrapper
-bench/       benchmark harness and results
-app/         local-first document assistant built on the database
-docs/        design decisions and known limitations
-```
 
 ### SIFT1M (1,000,000 base vectors, 128 dimensions, k=10, ef=50)
 
@@ -108,13 +133,60 @@ closest available approximation to comparing against a library.
 
 Full methodology and raw output in [bench/results.md](bench/results.md).
 
-### Document assistant
+## Document assistant
 
 A local-first assistant built on top of the database: ingest notes or
 PDFs, ask questions in plain language, get answers with citations.
-Everything runs on-device.
+Everything — embedding, retrieval, re-ranking, and answer generation
+— runs on-device. No API keys, no network calls.
+
+```bash
+cd app
+python3.12 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+
+python cli.py ingest /path/to/your/notes
+python cli.py ask "what did I write about X"
+
+python gui.py   # then open http://127.0.0.1:8080
+```
 
 ![The assistant answering a question with citations](docs/screenshots/gui-correct-answer.png)
+
+## Building from source
+
+Requires CMake 3.20+, a C++20 compiler, and Python 3.10+.
+
+```bash
+git clone https://github.com/amankarki151/lattice.git
+cd lattice
+
+pip install pybind11
+cmake -B build -Dpybind11_DIR=$(python -m pybind11 --cmakedir)
+cmake --build build
+```
+
+To build and run the test suite:
+
+```bash
+cmake -B build-test -DLATTICE_BUILD_TESTS=ON \
+  -Dpybind11_DIR=$(python -m pybind11 --cmakedir)
+cmake --build build-test
+cd build-test && ctest --output-on-failure
+```
+
+## Repository layout
+
+```
+core/        the database itself - storage, index, search
+core/tests/  30 tests covering storage, search, indexing, quantization
+cli/         command-line tool
+bindings/    pybind11 Python module
+server/      FastAPI HTTP wrapper
+bench/       benchmark harness and results
+app/         local-first document assistant built on the database
+docs/        design decisions and known limitations
+```
 
 ## Status
 
@@ -132,35 +204,16 @@ CI, and a working document assistant:
   and speed cost measured rather than assumed
 - Concurrent query path: many readers alongside a single writer,
   verified clean under the thread sanitizer
-- Python bindings via pybind11, with the GIL released around calls
+- - Python bindings via pybind11, with the GIL released around calls,
+  published on [PyPI](https://pypi.org/project/pylattice-db/)
 - A FastAPI HTTP server wrapping the bindings
 - GoogleTest suite: 30 tests covering storage, search, indexing, and
   quantization
 - CI that runs the tests and fails the build on a benchmark regression
-- A local-first document assistant: ingest a folder of notes or PDFs,
-  search them by meaning, entirely offline
+- A local-first document assistant: retrieve, re-rank with a
+  cross-encoder, synthesize an answer, and cite every source —
+  entirely offline
 
-Next: a multi-step agent loop and a GUI on top of the assistant.
-
-## Writing
-
-- [Building an HNSW index from scratch](https://amankarki.hashnode.dev/building-an-hnsw-index-from-scratch)
-
-## Usage
-
-```bash
-lattice /path/to/db insert 1 1.0,0.0,0.0
-lattice /path/to/db query 1.0,0.0,0.0 5
-lattice /path/to/db checkpoint
-lattice /path/to/db stats
-```
-
-## Building
-
-```bash
-cmake -B build
-cmake --build build
-```
 ## Known limitations
 
 - **Build time is slow.** 66 minutes for a million vectors, against
@@ -181,6 +234,10 @@ cmake --build build
 
 Full detail and reasoning in [docs/DESIGN.md](docs/DESIGN.md).
 
+## Writing
+
+- [Building an HNSW index from scratch](https://amankarki.hashnode.dev/building-an-hnsw-index-from-scratch)
+
 ## License
 
-MIT
+MIT — see [LICENSE](LICENSE).
