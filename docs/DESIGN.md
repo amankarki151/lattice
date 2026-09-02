@@ -115,3 +115,96 @@ benchmark numbers, not guessed at now.
 - No compaction - the WAL only shrinks at checkpoint, segments are
   rewritten whole
 - Single node only. No sharding, no replication.
+
+## Known limitations
+
+Everything here is a deliberate scope decision or a measured
+shortcoming, not a surprise. Listed because a design doc that only
+covers what works isn't a design doc.
+
+### Build time is slow
+
+Index construction takes 18-19 seconds for 10,000 vectors and about
+66 minutes for 1,000,000. Chroma does the same million in 105
+seconds. Two separate causes, worth keeping distinct:
+
+Architectural: inserts take an exclusive lock and go one vector at a
+time. There's no batch-insert path, so there's no opportunity to
+amortize lock acquisition or to parallelize graph construction.
+
+Measurement: the benchmark inserts into Lattice one call at a time
+through the Python bindings, while Qdrant and Chroma are fed through
+their bulk APIs. Some of the gap is that Lattice isn't being given
+the same advantage, not that its algorithm is worse.
+
+A batch-insert path is the single clearest thing to fix next.
+
+### Single node only
+
+No sharding, no replication, no distributed query. This is an
+embedded library - closer to SQLite than to Postgres. Scaling past
+one machine isn't a planned feature; it's out of scope by design.
+
+### Product quantization isn't implemented
+
+Scalar quantization (float32 to uint8, 4x smaller) is done and
+measured. Product quantization would compress much further and is a
+documented future direction, not a current capability.
+
+### The document assistant's sidecar is JSON
+
+Lattice stores vectors keyed by uint64 and doesn't store text, so the
+app keeps a JSON file mapping ids back to source text. That means
+loading the whole mapping into memory and rewriting the entire file
+on every save. Fine for thousands of chunks. Not fine for hundreds of
+thousands. SQLite is the obvious upgrade and hasn't been done.
+
+### The assistant produces nonsense for out-of-scope questions
+
+This is the sharpest limitation and worth showing rather than
+describing. Asked "what is the capital of France" - something no
+document in the corpus mentions - the assistant returned:
+
+![The assistant producing nonsense for an out-of-scope question](screenshots/gui-failure-example.png)
+
+> not in French capital city of Roumanie-Borne-Borne
+
+Not a refusal. Not a plausible-but-wrong answer. Malformed garbage,
+presented in the same UI as a correct answer, with nothing signalling
+to the user that anything went wrong.
+
+Retrieval and re-ranking behaved correctly here: all four cited
+sources were about HNSW internals and storage, because nothing in the
+corpus is about France. The failure is entirely at synthesis. The
+prompt instructs the model to say so when the context lacks the
+answer, and flan-t5-base does not reliably honour that.
+
+A larger model would handle this better. Using one would mean sending
+user documents to a hosted API, which defeats the premise of a
+local-first tool. This is the cost of that choice, stated plainly.
+
+### Citation precision is imperfect
+
+Even on questions it answers correctly, the re-ranker returns four
+sources and typically only one or two are directly on point. The
+others are topically adjacent - crash-safety passages surfacing for a
+question about temporary files, for instance. Users should treat the
+citation list as "related passages", not "the exact four sources this
+answer came from".
+
+### No checksums on records
+
+Torn writes are caught, because a short read fails and replay stops
+there. A flipped bit inside a record that's still the correct length
+would pass silently. Per-record checksums would fix this and aren't
+implemented.
+
+### The Qdrant benchmark comparison is not apples-to-apples
+
+Qdrant runs in `:memory:` local mode in the benchmarks, which its own
+client warns against above 20,000 points. At 1,000,000 points its p99
+was 1.7 seconds - that reflects local mode falling over, not Qdrant's
+real performance. Measuring Qdrant fairly at that scale needs Docker
+or Cloud mode, which hasn't been done. The 10,000-vector comparison,
+where all three systems are inside their intended operating range, is
+the fair one.

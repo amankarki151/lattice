@@ -2,11 +2,18 @@
 
 [![CI](https://github.com/amankarki151/lattice/actions/workflows/ci.yml/badge.svg)](https://github.com/amankarki151/lattice/actions/workflows/ci.yml)
 
-An embedded vector database, written from scratch in C++.
+An embedded vector database, written from scratch in C++ — a
+hand-implemented HNSW index, a disk-backed storage engine with
+write-ahead logging, scalar quantization, and a concurrent query path.
 
-Most vector databases are services you run. Lattice is a library you link
-against — closer to SQLite than to Postgres. Single node, no cluster, no
-network hop unless you want one.
+Most vector databases are services you run. Lattice is a library you
+link against — closer to SQLite than to Postgres. Single node, no
+cluster, no network hop unless you want one.
+
+On SIFT (10,000 vectors, 128 dimensions, k=10), Lattice answers
+queries in **583µs at 95.4% recall** — about 3.5x faster than Qdrant's
+in-memory mode on the same data. Full numbers, including where it
+loses, are below.
 
 ## Benchmarks
 
@@ -31,6 +38,41 @@ second for both competitors). The gap is partly architectural —
 Lattice inserts one vector at a time through an exclusive lock, with
 no batch-insert path yet — and partly a benchmark-harness limitation,
 since Qdrant and Chroma are both inserted here via their bulk APIs.
+
+## Building
+
+Requires CMake 3.20+, a C++20 compiler, and Python 3.10+.
+
+```bash
+git clone https://github.com/amankarki151/lattice.git
+cd lattice
+
+pip install pybind11
+cmake -B build -Dpybind11_DIR=$(python -m pybind11 --cmakedir)
+cmake --build build
+```
+
+To build and run the test suite:
+
+```bash
+cmake -B build-test -DLATTICE_BUILD_TESTS=ON \
+  -Dpybind11_DIR=$(python -m pybind11 --cmakedir)
+cmake --build build-test
+cd build-test && ctest --output-on-failure
+```
+
+## Repository layout
+
+```
+core/        the database itself - storage, index, search
+core/tests/  30 tests covering storage, search, indexing, quantization
+cli/         command-line tool
+bindings/    pybind11 Python module
+server/      FastAPI HTTP wrapper
+bench/       benchmark harness and results
+app/         local-first document assistant built on the database
+docs/        design decisions and known limitations
+```
 
 ### SIFT1M (1,000,000 base vectors, 128 dimensions, k=10, ef=50)
 
@@ -65,6 +107,14 @@ latency is buying features Lattice doesn't have. Qdrant runs in
 closest available approximation to comparing against a library.
 
 Full methodology and raw output in [bench/results.md](bench/results.md).
+
+### Document assistant
+
+A local-first assistant built on top of the database: ingest notes or
+PDFs, ask questions in plain language, get answers with citations.
+Everything runs on-device.
+
+![The assistant answering a question with citations](docs/screenshots/gui-correct-answer.png)
 
 ## Status
 
@@ -111,6 +161,25 @@ lattice /path/to/db stats
 cmake -B build
 cmake --build build
 ```
+## Known limitations
+
+- **Build time is slow.** 66 minutes for a million vectors, against
+  Chroma's 105 seconds. Partly architectural (single-writer, no batch
+  insert path), partly a benchmark artifact (competitors are fed
+  through bulk APIs, Lattice isn't).
+- **Single node only.** No sharding, no replication. This is a
+  library, not a cluster.
+- **The assistant produces nonsense for out-of-scope questions.**
+  Asked something the documents don't cover, the local synthesis
+  model returns malformed text rather than refusing. Real example and
+  screenshot in the design doc.
+- **Citation precision is imperfect.** Of four cited sources,
+  typically one or two are directly relevant and the rest are
+  topically adjacent.
+- **No per-record checksums.** Torn writes are caught; silent bit
+  corruption inside an otherwise-valid record isn't.
+
+Full detail and reasoning in [docs/DESIGN.md](docs/DESIGN.md).
 
 ## License
 
