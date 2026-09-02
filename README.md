@@ -17,6 +17,8 @@ queries in **583µs at 95.4% recall** — about 3.5x faster than Qdrant's
 in-memory mode on the same data. Full numbers, including where it
 loses, are below.
 
+[**Watch the 2-minute demo →**](https://youtu.be/yotdQkAqOkY)
+
 ## Contents
 
 - [Installing](#installing)
