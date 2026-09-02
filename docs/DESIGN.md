@@ -165,9 +165,9 @@ This is the sharpest limitation and worth showing rather than
 describing. Asked "what is the capital of France" - something no
 document in the corpus mentions - the assistant returned:
 
-![The assistant producing nonsense for an out-of-scope question](screenshots/gui-failure-example.png)
-
 > not in French capital city of Roumanie-Borne-Borne
+
+![The assistant producing nonsense for an out-of-scope question](screenshots/gui-failure-example.png)
 
 Not a refusal. Not a plausible-but-wrong answer. Malformed garbage,
 presented in the same UI as a correct answer, with nothing signalling
