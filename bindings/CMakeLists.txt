@@ -9,3 +9,5 @@ target_link_libraries(lattice_py PRIVATE lattice_core)
 # that name. So the target is lattice_py and the output file gets
 # renamed to lattice.
 set_target_properties(lattice_py PROPERTIES OUTPUT_NAME lattice)
+
+install(TARGETS lattice_py DESTINATION .)

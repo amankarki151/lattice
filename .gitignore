@@ -36,3 +36,6 @@ bench/data/
 
 app/.venv/
 app/data/
+
+dist/
+bindings/dist/
