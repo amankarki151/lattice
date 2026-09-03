@@ -116,6 +116,48 @@ def bench_lattice(base: np.ndarray, queries: np.ndarray, gt: np.ndarray,
                      notes="embedded library, no network")
 
 
+def bench_lattice_batched(base: np.ndarray, queries: np.ndarray,
+                          gt: np.ndarray, k: int, ef: int,
+                          warmup: int) -> Result:
+    """Same as bench_lattice, except every vector goes in through one
+    insert_batch() call instead of one insert() call per vector.
+
+    Everything else - warmup, timing, recall measurement - stays
+    identical to bench_lattice so the two rows are a fair, apples-to-
+    apples comparison. Only the insert path differs.
+    """
+    import lattice
+
+    cfg = lattice.HnswConfig()
+    cfg.M = 16
+    cfg.ef_construction = 200
+
+    index = lattice.ConcurrentIndex(cfg)
+
+    vectors = [lattice.Vector(i, base[i].tolist()) for i in range(len(base))]
+
+    t0 = time.perf_counter()
+    index.insert_batch(vectors)
+    build_s = time.perf_counter() - t0
+
+    for i in range(min(warmup, len(queries))):
+        index.search(queries[i].tolist(), k, ef)
+
+    recalls: List[float] = []
+    times_us: List[float] = []
+
+    for qi, q in enumerate(queries):
+        ql = q.tolist()
+        t = time.perf_counter()
+        hits = index.search(ql, k, ef)
+        times_us.append((time.perf_counter() - t) * 1e6)
+        recalls.append(recall_at_k(gt[qi], [h.id for h in hits], k))
+
+    return summarize(f"Lattice batched (ef={ef})", build_s, recalls, times_us,
+                     notes="single insert_batch call instead of per-vector "
+                           "insert - same lock, acquired once")
+
+
 # ----------------------------------------------------------------- qdrant
 
 def bench_qdrant(base: np.ndarray, queries: np.ndarray, gt: np.ndarray,
@@ -128,8 +170,6 @@ def bench_qdrant(base: np.ndarray, queries: np.ndarray, gt: np.ndarray,
         return None
 
     dim = base.shape[1]
-    # :memory: mode - no server, no network hop. Closest thing to a
-    # like-for-like comparison with an embedded library.
     client = QdrantClient(":memory:")
 
     client.recreate_collection(
@@ -342,6 +382,10 @@ def main():
     print("\nrunning lattice...")
     results.append(bench_lattice(base, queries, gt, args.k, args.ef,
                                  args.warmup))
+
+    print("running lattice (batched insert)...")
+    results.append(bench_lattice_batched(base, queries, gt, args.k, args.ef,
+                                         args.warmup))
 
     if "qdrant" not in skip:
         print("running qdrant...")

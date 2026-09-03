@@ -208,3 +208,16 @@ real performance. Measuring Qdrant fairly at that scale needs Docker
 or Cloud mode, which hasn't been done. The 10,000-vector comparison,
 where all three systems are inside their intended operating range, is
 the fair one.
+
+Update: added a batch-insert path (insert_batch) that takes the
+exclusive lock once for a whole batch instead of once per vector.
+Measured result: no meaningful improvement (18.8s vs 18.3s on
+siftsmall, within normal run-to-run noise). The lock acquisition
+was never the actual bottleneck - the real cost is the HNSW graph
+construction work itself (search_layer at ef_construction=200 per
+vector), which batching doesn't touch. insert_batch is kept in the
+codebase since it's correct and removes real per-call overhead, but
+it does not close the build-time gap with Qdrant/Chroma. Actually
+closing that gap would need either parallelizing graph construction
+(real correctness complexity) or accepting a lower ef_construction
+at a measured recall cost.
