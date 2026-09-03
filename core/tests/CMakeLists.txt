@@ -15,6 +15,7 @@ add_executable(lattice_tests
     test_search.cpp
     test_hnsw.cpp
     test_quantizer.cpp
+    test_crc32.cpp
 )
 
 target_link_libraries(lattice_tests PRIVATE lattice_core GTest::gtest_main)

@@ -8,6 +8,7 @@ add_library(lattice_core
     src/hnsw.cpp
     src/quantizer.cpp
     src/concurrent_index.cpp
+    src/crc32.cpp
 )
 
 target_include_directories(lattice_core PUBLIC include)
