@@ -239,6 +239,8 @@ Full detail and reasoning in [docs/DESIGN.md](docs/DESIGN.md).
 ## Writing
 
 - [Building an HNSW index from scratch](https://amankarki.hashnode.dev/building-an-hnsw-index-from-scratch)
+- [Benchmarking against Qdrant and Chroma](https://amankarki.hashnode.dev/vector-database-vs-qdrant-chroma-benchmark)
+- [What I learned building a storage engine from scratch (and what I'd change)](https://amankarki.hashnode.dev/what-i-learned-building-a-storage-engine-from-scratch-and-what-i-d-change)
 
 ## License
 
