@@ -39,3 +39,4 @@ app/data/
 
 dist/
 bindings/dist/
+demo.sh
