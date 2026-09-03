@@ -242,6 +242,8 @@ Full detail and reasoning in [docs/DESIGN.md](docs/DESIGN.md).
 - [Benchmarking against Qdrant and Chroma](https://amankarki.hashnode.dev/vector-database-vs-qdrant-chroma-benchmark)
 - [What I learned building a storage engine from scratch (and what I'd change)](https://amankarki.hashnode.dev/what-i-learned-building-a-storage-engine-from-scratch-and-what-i-d-change)
 
+Each article is also republished on Medium and syndicated to [Stackademic](https://stackademic.com).
+
 ## License
 
 MIT — see [LICENSE](LICENSE).
