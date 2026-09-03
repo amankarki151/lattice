@@ -84,6 +84,9 @@ PYBIND11_MODULE(lattice, m) {
         .def("size", &lattice::ConcurrentIndex::size)
         .def("max_layer", &lattice::ConcurrentIndex::max_layer)
         .def("insert_count", &lattice::ConcurrentIndex::insert_count)
-        .def("search_count", &lattice::ConcurrentIndex::search_count)
-        .def("__len__", &lattice::ConcurrentIndex::size);
-}
+                .def("search_count", &lattice::ConcurrentIndex::search_count)
+        .def("__len__", &lattice::ConcurrentIndex::size)
+        .def("insert_batch", &lattice::ConcurrentIndex::insert_batch,
+             py::arg("vectors"),
+             py::call_guard<py::gil_scoped_release>());
+        }
