@@ -14,6 +14,14 @@ void ConcurrentIndex::insert(const Vector& v) {
     inserts_.fetch_add(1, std::memory_order_relaxed);
 }
 
+void ConcurrentIndex::insert_batch(const std::vector<Vector>& vectors) {
+    std::unique_lock<std::shared_mutex> lock(mutex_);
+    for (const auto& v : vectors) {
+        index_.insert(v);
+    }
+    inserts_.fetch_add(vectors.size(), std::memory_order_relaxed);
+}
+
 std::vector<SearchResult> ConcurrentIndex::search(
     const std::vector<float>& query, size_t k, size_t ef) const {
     // shared_lock = read access. Multiple threads hold this at once.

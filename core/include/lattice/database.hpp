@@ -33,6 +33,7 @@ public:
     Database& operator=(const Database&) = delete;
 
     void insert(const Vector& v);
+    void insert_batch(const std::vector<Vector>& vectors);
     std::optional<Vector> get(uint64_t id) const;
     size_t size() const;
 

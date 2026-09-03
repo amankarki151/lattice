@@ -7,6 +7,7 @@
 #include "lattice/hnsw.hpp"
 #include "lattice/search.hpp"
 
+#include "lattice/concurrent_index.hpp"
 namespace {
 
 std::vector<lattice::Vector> random_dataset(size_t count, size_t dim,
@@ -147,6 +148,25 @@ TEST(HnswTest, EfIsRaisedToKWhenTooSmall) {
     // Asking for 20 results with ef=5 shouldn't return only 5.
     auto hits = index.search(data[0].data, 20, 5);
     EXPECT_EQ(hits.size(), 20u);
+}
+
+TEST(HnswTest, BatchInsertMatchesIndividualInserts) {
+    auto data = random_dataset(500, 8, 55);
+
+    lattice::HnswIndex individual;
+    for (const auto& v : data) individual.insert(v);
+
+    lattice::ConcurrentIndex batched;
+    batched.insert_batch(data);
+
+    EXPECT_EQ(batched.size(), individual.size());
+
+    for (size_t i = 0; i < data.size(); i += 25) {
+        auto hits = batched.search(data[i].data, 1, 50);
+        ASSERT_FALSE(hits.empty());
+        EXPECT_EQ(hits[0].id, data[i].id);
+        EXPECT_FLOAT_EQ(hits[0].distance, 0.0f);
+    }
 }
 
 }  // namespace

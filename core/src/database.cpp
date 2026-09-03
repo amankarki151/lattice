@@ -67,6 +67,15 @@ void Database::insert(const Vector& v) {
     wal_->append(v);
     store_.insert(v);
 }
+void Database::insert_batch(const std::vector<Vector>& vectors) {
+    for (const auto& v : vectors) {
+        wal_->append(v);
+    }
+    wal_->flush();
+    for (const auto& v : vectors) {
+        store_.insert(v);
+    }
+}
 
 std::optional<Vector> Database::get(uint64_t id) const {
     return store_.get(id);

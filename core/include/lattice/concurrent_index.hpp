@@ -41,6 +41,8 @@ public:
     // Exclusive. Blocks until every in-flight reader is done.
     void insert(const Vector& v);
 
+    void insert_batch(const std::vector<Vector>& vectors);
+
     // Shared. Any number of threads can be inside this at once.
     std::vector<SearchResult> search(const std::vector<float>& query,
                                      size_t k, size_t ef = 50) const;
