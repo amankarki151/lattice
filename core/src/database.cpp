@@ -86,7 +86,10 @@ size_t Database::size() const {
 }
 
 std::vector<SearchResult> Database::search(const std::vector<float>& query,
-                                           size_t k) const {
+                                           size_t k,
+                                           const std::optional<std::unordered_set<uint64_t>>& ids) const {
+    // ids is accepted but not yet applied -- filtering lands in the next commit.
+    // Declared here so callers can start passing it without a second signature change.
     const auto strategy = planner_.choose(store_.size(), index_available_);
 
     switch (strategy) {

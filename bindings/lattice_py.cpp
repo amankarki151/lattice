@@ -67,7 +67,8 @@ PYBIND11_MODULE(lattice, m) {
              py::call_guard<py::gil_scoped_release>())
         .def("get", &lattice::Database::get, py::arg("id"))
         .def("search", &lattice::Database::search, py::arg("query"),
-             py::arg("k"), py::call_guard<py::gil_scoped_release>())
+             py::arg("k"), py::arg("ids") = std::nullopt,
+             py::call_guard<py::gil_scoped_release>())
         .def("checkpoint", &lattice::Database::checkpoint,
              py::call_guard<py::gil_scoped_release>())
         .def("size", &lattice::Database::size)

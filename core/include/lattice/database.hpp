@@ -4,6 +4,7 @@
 #include <memory>
 #include <optional>
 #include <string>
+#include <unordered_set>
 #include <vector>
 
 #include "lattice/flat_store.hpp"
@@ -39,8 +40,8 @@ public:
 
     // Nearest neighbours to query, closest first.
     std::vector<SearchResult> search(const std::vector<float>& query,
-                                     size_t k) const;
-
+                                     size_t k,
+                                     const std::optional<std::unordered_set<uint64_t>>& ids = std::nullopt) const;
     void checkpoint();
 
     const std::string& segment_path() const { return seg_path_; }
