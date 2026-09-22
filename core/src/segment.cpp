@@ -35,18 +35,24 @@ void SegmentWriter::write(const std::string& path,
     for (const auto& v : items) {
         const uint64_t id = v.id;
         const uint32_t dim = v.dim();
+        const uint32_t payload_len = static_cast<uint32_t>(v.payload.size());
 
         out.write(reinterpret_cast<const char*>(&id), sizeof(id));
         out.write(reinterpret_cast<const char*>(&dim), sizeof(dim));
         out.write(reinterpret_cast<const char*>(v.data.data()),
                   static_cast<std::streamsize>(dim) * sizeof(float));
+        out.write(reinterpret_cast<const char*>(&payload_len), sizeof(payload_len));
+        if (payload_len > 0) {
+            out.write(reinterpret_cast<const char*>(v.payload.data()),
+                      static_cast<std::streamsize>(payload_len));
+        }
     }
 
     out.flush();
     out.close();
 
     // Rename is atomic on the same filesystem. Either the old segment is
-    // there or the new one is — never a half-written thing in between.
+    // there or the new one is -- never a half-written thing in between.
     if (std::rename(tmp.c_str(), path.c_str()) != 0) {
         throw std::runtime_error("segment: rename failed for " + path);
     }
@@ -141,6 +147,18 @@ std::vector<Vector> SegmentReader::read_all() const {
         v.data.resize(dim);
         std::memcpy(v.data.data(), data_ + offset, bytes);
         offset += bytes;
+
+        if (offset + sizeof(uint32_t) > size_) break;
+        uint32_t payload_len = 0;
+        std::memcpy(&payload_len, data_ + offset, sizeof(payload_len));
+        offset += sizeof(payload_len);
+
+        if (payload_len > 0) {
+            if (offset + payload_len > size_) break;
+            v.payload.resize(payload_len);
+            std::memcpy(v.payload.data(), data_ + offset, payload_len);
+            offset += payload_len;
+        }
 
         result.push_back(std::move(v));
     }
