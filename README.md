@@ -13,9 +13,9 @@ link against — closer to SQLite than to Postgres. Single node, no
 cluster, no network hop unless you want one.
 
 On SIFT (10,000 vectors, 128 dimensions, k=10), Lattice answers
-queries in **583µs at 95.4% recall** — about 3.5x faster than Qdrant's
-in-memory mode on the same data. Full numbers, including where it
-loses, are below.
+queries in **583µs p50 at 95.4% recall**, and 1.3 ms p50 on SIFT1M.
+It's benchmarked against Qdrant and Chroma below, including where
+it loses.
 
 [**Watch the 2-minute demo →**](https://youtu.be/yotdQkAqOkY)
 
