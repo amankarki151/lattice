@@ -2,6 +2,7 @@
 
 #include <sys/stat.h>
 
+#include <algorithm>
 #include <cstdio>
 #include <iostream>
 
@@ -88,23 +89,28 @@ size_t Database::size() const {
 std::vector<SearchResult> Database::search(const std::vector<float>& query,
                                            size_t k,
                                            const std::optional<std::unordered_set<uint64_t>>& ids) const {
-    // ids is accepted but not yet applied -- filtering lands in the next commit.
-    // Declared here so callers can start passing it without a second signature change.
     const auto strategy = planner_.choose(store_.size(), index_available_);
+
+    // Copies every vector out of the store to scan them, which is wasteful
+    // and gets fixed once there's a real index. If the caller passed an id
+    // filter, drop everything outside it before scanning, so the scan only
+    // ever sees vectors that are allowed to come back.
+    std::vector<Vector> items = store_.snapshot();
+    if (ids.has_value()) {
+        items.erase(std::remove_if(items.begin(), items.end(),
+                                   [&](const Vector& v) { return ids->count(v.id) == 0; }),
+                    items.end());
+    }
 
     switch (strategy) {
         case SearchStrategy::Exact:
-            // Copies every vector out of the store to scan them, which is
-            // wasteful and gets fixed once there's a real index. Today it
-            // just needs to be correct - this is what HNSW gets checked
-            // against.
-            return brute_force_search(store_.snapshot(), query, k);
+            return brute_force_search(items, query, k);
 
         case SearchStrategy::Approximate:
             // Not reachable yet - index_available_ is always false until
             // HNSW exists. Falling back rather than throwing so this can't
             // break anything if the flag gets set early by mistake.
-            return brute_force_search(store_.snapshot(), query, k);
+            return brute_force_search(items, query, k);
     }
 
     return {};
