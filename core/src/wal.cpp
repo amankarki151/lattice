@@ -18,21 +18,27 @@ Wal::~Wal() {
     }
 }
 
+void Wal::flush() {
+    out_.flush();
+}
+
 void Wal::append(const Vector& v) {
     const uint64_t id = v.id;
     const uint32_t dim = v.dim();
+    const uint32_t payload_len = static_cast<uint32_t>(v.payload.size());
 
     out_.write(reinterpret_cast<const char*>(&id), sizeof(id));
     out_.write(reinterpret_cast<const char*>(&dim), sizeof(dim));
     out_.write(reinterpret_cast<const char*>(v.data.data()),
                static_cast<std::streamsize>(dim) * sizeof(float));
+    out_.write(reinterpret_cast<const char*>(&payload_len), sizeof(payload_len));
+    if (payload_len > 0) {
+        out_.write(reinterpret_cast<const char*>(v.payload.data()),
+                   static_cast<std::streamsize>(payload_len));
+    }
 
     // Flushing on every append is slow and I know it. Correctness first —
     // batching goes in once there's a benchmark to prove it helped.
-    out_.flush();
-}
-
-void Wal::flush() {
     out_.flush();
 }
 
@@ -66,6 +72,22 @@ std::vector<Vector> Wal::replay(const std::string& path) {
             static_cast<std::streamsize>(dim) * sizeof(float);
         in.read(reinterpret_cast<char*>(v.data.data()), bytes);
         if (in.gcount() != bytes) break;  // torn record, stop here
+
+        uint32_t payload_len = 0;
+        in.read(reinterpret_cast<char*>(&payload_len), sizeof(payload_len));
+        if (in.gcount() != sizeof(payload_len)) break;
+
+        // same reasoning as the dim check above - a torn write shouldn't
+        // make us try to allocate something absurd
+        if (payload_len > 16 * 1024 * 1024) break;
+
+        if (payload_len > 0) {
+            v.payload.resize(payload_len);
+            const std::streamsize payload_bytes =
+                static_cast<std::streamsize>(payload_len);
+            in.read(reinterpret_cast<char*>(v.payload.data()), payload_bytes);
+            if (in.gcount() != payload_bytes) break;  // torn record, stop here
+        }
 
         result.push_back(std::move(v));
     }

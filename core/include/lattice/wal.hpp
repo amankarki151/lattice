@@ -12,7 +12,7 @@ namespace lattice {
 // Append-only write-ahead log.
 //
 // On-disk record layout:
-//   [uint64 id][uint32 dim][dim * float32 data]
+//   [uint64 id][uint32 dim][dim * float32 data][uint32 payload_len][payload_len bytes]
 //
 // No delimiters. Once you've read the dim you know exactly how many bytes
 // the body is. A record that's cut short (process died mid-write) fails the

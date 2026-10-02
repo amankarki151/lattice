@@ -18,15 +18,17 @@ namespace lattice {
 //     [8]  reserved  (zeros)
 //
 //   Then `count` records, each:
-//     [8]  id   (uint64)
-//     [4]  dim  (uint32)
+//     [8]  id           (uint64)
+//     [4]  dim          (uint32)
 //     [dim * 4] float32 data
+//     [4]  payload_len  (uint32)
+//     [payload_len] payload bytes
 //
 // The header size is fixed at 24 bytes on purpose. Adding a field later
 // means eating into the reserved block, not shifting every record offset.
 
 constexpr char kSegmentMagic[4] = {'L', 'T', 'S', 'G'};
-constexpr uint32_t kSegmentVersion = 1;
+constexpr uint32_t kSegmentVersion = 2;
 constexpr size_t kSegmentHeaderSize = 24;
 
 // Writes a batch of vectors out to a segment file in one go.
