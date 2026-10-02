@@ -97,6 +97,11 @@ std::vector<SearchResult> Database::search(const std::vector<float>& query,
     // ever sees vectors that are allowed to come back.
     std::vector<Vector> items = store_.snapshot();
     if (ids.has_value()) {
+        // An empty filter means the caller explicitly scoped to nothing,
+        // not "no filter" -- so it should come back empty, not full.
+        if (ids->empty()) {
+            return {};
+        }
         items.erase(std::remove_if(items.begin(), items.end(),
                                    [&](const Vector& v) { return ids->count(v.id) == 0; }),
                     items.end());
