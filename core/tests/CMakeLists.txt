@@ -13,6 +13,7 @@ add_executable(lattice_tests
     test_wal.cpp
     test_segment.cpp
     test_search.cpp
+    test_database.cpp
     test_hnsw.cpp
     test_quantizer.cpp
     test_crc32.cpp
